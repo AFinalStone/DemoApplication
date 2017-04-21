@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoApplication</string>
+
+    <string name="mainActivity_et_pleaseInputName">请输入帐号</string>
+    <string name="mainActivity_et_pleaseInputPassword">请输入密码</string>
+    <string name="mainActivity_btn_login">登录</string>
+</resources>

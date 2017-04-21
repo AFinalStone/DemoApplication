@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="userNames">
+        <item >李白白</item>
+        <item >王安安</item>
+        <item >杜朴朴</item>
+        <item >11111</item>
+        <item >22222</item>
+        <item >333小白菜</item>
+    </string-array>
+</resources>
