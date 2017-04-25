@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/loginByWX/loginByWX.iml" filepath="$PROJECT_DIR$/loginByWX/loginByWX.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvc/mvc.iml" filepath="$PROJECT_DIR$/mvc/mvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/sqlite/sqlite.iml" filepath="$PROJECT_DIR$/sqlite/sqlite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlite-dbflow/sqlite-dbflow.iml" filepath="$PROJECT_DIR$/sqlite-dbflow/sqlite-dbflow.iml" />
     </modules>
   </component>
 </project>

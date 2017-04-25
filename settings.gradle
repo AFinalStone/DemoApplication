@@ -1,1 +1,1 @@
-include ':loginByWX', ':mvc', ':sqlite'
+include ':loginByWX', ':mvc', ':sqlite', ':sqlite-dbflow'
