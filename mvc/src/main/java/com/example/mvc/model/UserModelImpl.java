@@ -1,10 +1,8 @@
 package com.example.mvc.model;
 
-import android.os.Handler;
-import android.os.Message;
 import android.os.SystemClock;
 
-import com.example.mvc.entity.UserBean;
+import com.example.mvc.entity.UserEntity;
 
 /**
  * Created by afinalstone on 17-4-19.
@@ -18,8 +16,8 @@ public class UserModelImpl implements UserModel {
             @Override
             public void run() {
                 SystemClock.sleep(3000);
-                UserBean userBean = new UserBean(name,password);
-                listener.onSuccess(userBean);
+                UserEntity userEntity = new UserEntity(name,password);
+                listener.onSuccess(userEntity);
             }
         }).start();
     }

@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textView;
     private ProgressBar progressBar;
-    private String BASE_URL = "https://api.github.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

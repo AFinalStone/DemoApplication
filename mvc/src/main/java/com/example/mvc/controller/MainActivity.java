@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatAutoCompleteTextView;
-import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ProgressBar;
 
 import com.example.mvc.R;
-import com.example.mvc.entity.UserBean;
+import com.example.mvc.entity.UserEntity;
 import com.example.mvc.model.OnUserListener;
 import com.example.mvc.model.UserModel;
 import com.example.mvc.model.UserModelImpl;
@@ -28,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AppCompatAutoCompleteTextView et_password;
     ArrayAdapter<String> arrayAdapter;
     ProgressDialog progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,14 +85,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         userModel.getUser(et_name.getText().toString().trim(), et_password.getText().toString().trim()
                 , new OnUserListener() {
                     @Override
-                    public void onSuccess( UserBean userBean) {
+                    public void onSuccess( UserEntity userEntity) {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 hideLoaingView();
                             }
                         });
-                        displayResult(userBean);
+                        displayResult(userEntity);
                     }
 
                     @Override
@@ -112,10 +111,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 显示结果
-     * @param userBean
+     * @param userEntity
      */
-    public void displayResult(UserBean userBean) {
-        showMsg("恭喜"+userBean.getName()+"登录成功");
+    public void displayResult(UserEntity userEntity) {
+        showMsg("恭喜"+ userEntity.getName()+"登录成功");
     }
 
     private <T extends View> T findView(int id) {

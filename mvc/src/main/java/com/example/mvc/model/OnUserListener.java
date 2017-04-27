@@ -1,6 +1,6 @@
 package com.example.mvc.model;
 
-import com.example.mvc.entity.UserBean;
+import com.example.mvc.entity.UserEntity;
 
 /**
  * Created by afinalstone on 17-4-18.
@@ -8,7 +8,7 @@ import com.example.mvc.entity.UserBean;
 
 public interface OnUserListener {
 
-    void onSuccess(UserBean weather);
+    void onSuccess(UserEntity weather);
 
     void onError();
 }

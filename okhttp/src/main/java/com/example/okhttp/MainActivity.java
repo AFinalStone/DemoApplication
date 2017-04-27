@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private OkHttpClient client;
     private Request request;
     private String BASE_URL = "https://api.douban.com/v2/movie/top250?start=0&count=10";
-    private String BASE_URL2 = "https://api.github.com/";
     private MyHandler handler = new MyHandler();
     private Context mContext;
 
