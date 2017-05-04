@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("rxjava+retrofit01");
         tv_content = (TextView) findViewById(R.id.tv_content);
-        tv_content.setText("rxjava+retrofit01");
+        tv_content.setText("直接使用rxjava+retrofit进行网络请求");
     }
 
     public void onClick(View view){

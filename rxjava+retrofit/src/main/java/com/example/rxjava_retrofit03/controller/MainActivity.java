@@ -25,8 +25,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("rxjava+retrofit03");
         tv_content = (TextView) findViewById(R.id.tv_content);
-        tv_content.setText("rxjava+retrofit03");
+        tv_content.setText("使用rxjava+retrofit进行封装网络请求，封装请求过程为httpMethods对象，" +
+                "并对返回相同格式的Http请求结果数据统一进行预处理");
+
     }
 
     public void onClick(View view) {

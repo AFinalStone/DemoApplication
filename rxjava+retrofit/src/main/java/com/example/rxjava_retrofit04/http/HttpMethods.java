@@ -3,13 +3,16 @@ package com.example.rxjava_retrofit04.http;
 
 import com.example.rxjava_retrofit04.entity.HttpResult;
 import com.example.rxjava_retrofit04.entity.MovieSubjectsBean;
+import com.example.rxjava_retrofit04.entity.MsgCode;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
+import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -37,8 +40,8 @@ public class HttpMethods {
         retrofit = new Retrofit.Builder()
                 .client(builder.build())
                 //modify by zqikai 20160317 for 对http请求结果进行统一的预处理 GosnResponseBodyConvert
-//                .addConverterFactory(GsonConverterFactory.create())
-                .addConverterFactory(ResponseConvertFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+//                .addConverterFactory(ResponseConvertFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(BASE_URL)
                 .build();
@@ -64,10 +67,26 @@ public class HttpMethods {
      */
     public void getTopMovie(Subscriber<List<MovieSubjectsBean>> subscriber, int start, int count){
 
-        Observable observable = movieService.getTopMovie(start, count)
+        Observable observable = movieService.getTopMovieList(start, count)
                 .map(new HttpResultFunc<List<MovieSubjectsBean>>());
 
         toSubscribe(observable, subscriber);
+    }
+
+    /**
+     * 用于获取豆瓣电影Top250的数据
+     * @param subscriber  由调用者传过来的观察者对象
+     * @param start 起始位置
+     * @param count 获取长度
+     */
+    public void getTopMovieTop100(Subscriber<MsgCode> subscriber, int start, int count){
+
+        Observable observable = movieService.getTopMovieString(start, count);
+
+        observable.subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
     }
 
     private <T> void toSubscribe(Observable<T> o, Subscriber<T> s){
