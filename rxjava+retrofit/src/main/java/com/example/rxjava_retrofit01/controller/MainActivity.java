@@ -10,7 +10,9 @@ import com.example.rxjava_retrofit01.bean.MovieBean;
 import com.example.rxjava_retrofit01.model.MovieModel;
 import com.example.rxjava_retrofit01.model.MovieModelImpl;
 
-import rx.Subscriber;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,10 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void getMovieInfo(){
 
-        movieModel.getMovie(0, 10, new Subscriber<MovieBean>() {
+        movieModel.getMovie(0, 10, new Observer<MovieBean>() {
             @Override
-            public void onCompleted() {
+            public void onSubscribe(Disposable d) {
 
+            }
+
+            @Override
+            public void onNext(MovieBean value) {
+                System.out.println(value);
+                tv_content.setText(value.toString());
             }
 
             @Override
@@ -45,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onNext(MovieBean movieBean) {
-                System.out.println(movieBean);
-                tv_content.setText(movieBean.toString());
+            public void onComplete() {
+
             }
         });
     }

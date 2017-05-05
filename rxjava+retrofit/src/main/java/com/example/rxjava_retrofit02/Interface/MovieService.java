@@ -3,9 +3,9 @@ package com.example.rxjava_retrofit02.Interface;
 
 import com.example.rxjava_retrofit02.entity.MovieEntity;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import rx.Observable;
 
 /**
  * Created by afinalstone on 17-4-25.

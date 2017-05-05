@@ -3,12 +3,12 @@ package com.example.rxjava_retrofit01.model;
 import com.example.rxjava_retrofit01.Interface.MovieService;
 import com.example.rxjava_retrofit01.bean.MovieBean;
 
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by afinalstone on 17-4-26.
@@ -18,13 +18,13 @@ import rx.schedulers.Schedulers;
 public class MovieModelImpl implements MovieModel<MovieBean> {
 
     @Override
-    public void getMovie(int start, int count, Subscriber<MovieBean> subscriber) {
+    public void getMovie(int start, int count, Observer<MovieBean> observer) {
         String baseUrl = "https://api.douban.com/v2/movie/";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
 
 
@@ -33,7 +33,7 @@ public class MovieModelImpl implements MovieModel<MovieBean> {
         movieService.getTopMovie(0, 10)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(subscriber);
+                .subscribe(observer);
     }
 
 }

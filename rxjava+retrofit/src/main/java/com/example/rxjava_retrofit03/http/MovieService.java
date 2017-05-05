@@ -6,9 +6,9 @@ import com.example.rxjava_retrofit03.entity.MovieSubjectsBean;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import rx.Observable;
 
 /**
  * Created by liukun on 16/3/9.

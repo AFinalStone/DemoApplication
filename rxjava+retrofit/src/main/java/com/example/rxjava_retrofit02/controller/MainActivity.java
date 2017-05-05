@@ -11,7 +11,8 @@ import com.example.rxjava_retrofit02.entity.MovieEntity;
 import com.example.rxjava_retrofit02.model.MovieModel;
 import com.example.rxjava_retrofit02.model.MovieModelImpl;
 
-import rx.Subscriber;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,23 +34,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getMovieInfo() {
-        Subscriber<MovieEntity> subscriber = new Subscriber<MovieEntity>() {
+
+        Observer<MovieEntity> observer = new Observer<MovieEntity>() {
             @Override
-            public void onCompleted() {
-                Toast.makeText(MainActivity.this, "Get Top Movie Completed", Toast.LENGTH_SHORT).show();
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(MovieEntity value) {
+                System.out.println(value);
+                tv_content.setText(value.toString());
             }
 
             @Override
             public void onError(Throwable e) {
-                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
             }
 
             @Override
-            public void onNext(MovieEntity movieEntity) {
-                System.out.println(movieEntity);
-                tv_content.setText(movieEntity.toString());
+            public void onComplete() {
+                Toast.makeText(MainActivity.this, "Get Top Movie Completed", Toast.LENGTH_SHORT).show();
             }
         };
-        movieModel.getMovie(0, 10, subscriber);
+        movieModel.getMovie(0, 10, observer);
     }
 }

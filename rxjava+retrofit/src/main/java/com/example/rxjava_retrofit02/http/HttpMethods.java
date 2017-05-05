@@ -5,13 +5,13 @@ import com.example.rxjava_retrofit02.entity.MovieEntity;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by afinalstone on 17-4-26.
@@ -35,7 +35,7 @@ public class HttpMethods {
         retrofit = new Retrofit.Builder()
                 .client(httpClientBuilder.build())
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(BASE_URL)
                 .build();
 
@@ -47,7 +47,7 @@ public class HttpMethods {
         private static final HttpMethods INSTANCE = new HttpMethods();
     }
 
-    //获取单例
+    //获取单例Subscriber
     public static HttpMethods getInstance(){
         return SingletonHolder.INSTANCE;
     }
@@ -58,7 +58,7 @@ public class HttpMethods {
      * @param start 起始位置
      * @param count 获取长度
      */
-    public void getTopMovie(Subscriber<MovieEntity> subscriber, int start, int count){
+    public void getTopMovie(Observer<MovieEntity> subscriber, int start, int count){
         movieService.getTopMovie(start, count)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

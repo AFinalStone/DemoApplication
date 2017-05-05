@@ -7,10 +7,10 @@ import com.example.rxjava_retrofit04.entity.MsgCode;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import rx.Observable;
 
 /**
  * Created by liukun on 16/3/9.

@@ -11,9 +11,14 @@ import com.example.rxjava_retrofit03.entity.MovieSubjectsBean;
 import com.example.rxjava_retrofit03.model.MovieModel;
 import com.example.rxjava_retrofit03.model.MovieModelImpl;
 
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.util.List;
 
-import rx.Subscriber;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,13 +38,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        getMovieInfo();
+//        getMovieInfoByObserver();
+        getMovieInfoBySubscriber();
     }
 
-    private void getMovieInfo() {
-        Subscriber<List<MovieSubjectsBean>> subscriber = new Subscriber<List<MovieSubjectsBean>>() {
+    private void getMovieInfoByObserver() {
+        Observer<List<MovieSubjectsBean>> observer = new Observer<List<MovieSubjectsBean>>() {
+
             @Override
-            public void onCompleted() {
+            public void onComplete() {
                 Toast.makeText(MainActivity.this, "Get Top Movie Completed", Toast.LENGTH_SHORT).show();
             }
 
@@ -49,11 +56,43 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
             public void onNext(List<MovieSubjectsBean> movieEntity) {
                 System.out.println(movieEntity);
                 tv_content.setText(movieEntity.toString());
             }
         };
-        movieModel.getMovie(0, 10, subscriber);
+        movieModel.getMovieByObserver(0, 10, observer);
+    }
+
+    private void getMovieInfoBySubscriber() {
+        Subscriber<List<MovieSubjectsBean>> subscriber = new Subscriber<List<MovieSubjectsBean>>() {
+
+            @Override
+            public void onComplete() {
+                Toast.makeText(MainActivity.this, "Get Top Movie Completed", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSubscribe(Subscription s) {
+
+            }
+
+            @Override
+            public void onNext(List<MovieSubjectsBean> movieEntity) {
+                System.out.println(movieEntity);
+                tv_content.setText(movieEntity.toString());
+            }
+        };
+        movieModel.getMovieBySubsuber(0, 10, subscriber);
     }
 }

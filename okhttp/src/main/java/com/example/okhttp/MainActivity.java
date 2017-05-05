@@ -22,11 +22,14 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
+    private TextView textViewInsert;
+    private TextView textViewGet;
     private ProgressBar progressBar;
     private OkHttpClient client;
     private Request request;
-    private String BASE_URL = "https://api.douban.com/v2/movie/top250?start=0&count=10";
+//    private String BASE_URL = "https://api.douban.com/v2/movie/top250?start=0&count=10";
+    private String BASE_URL = "http://192.168.1.116:8081/web/insertJsonString?methodName=getName&jsonString=[\"code\":1,\"data\":\"I am Content\",\"msg\":\"success\"]";
+    private String BASE_URL02 = "http://192.168.1.116:8081/web/getJsonString?methodName=getName";
     private MyHandler handler = new MyHandler();
     private Context mContext;
 
@@ -34,21 +37,41 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mContext = this;
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        textView = (TextView) findViewById(R.id.textView);
+        textViewInsert = (TextView) findViewById(R.id.textViewInsert);
+        textViewGet = (TextView) findViewById(R.id.textViewGet);
     }
 
     public void onClick(View view){
-        textView.setText("正在请求。。。");
-        progressBar.setVisibility(View.VISIBLE);
-        client = new OkHttpClient();
-        Request.Builder builder = new Request.Builder()
-                .url(BASE_URL)
-                .method("GET", null);
+        switch (view.getId()){
+            case R.id.textViewInsert:
+            {
+                client = new OkHttpClient();
+                Request.Builder builder = new Request.Builder()
+                        .url(BASE_URL)
+                        .method("GET", null);
 
-        request = builder.build();
-        Call mCall = client.newCall(request);
-        mCall.enqueue(new MyCallback());
+                request = builder.build();
+                Call mCall = client.newCall(request);
+                mCall.enqueue(new MyCallback());
+            }
+
+                break;
+            case R.id.textViewGet: {
+                client = new OkHttpClient();
+                Request.Builder builder = new Request.Builder()
+                        .url(BASE_URL02)
+                        .method("GET", null);
+
+                request = builder.build();
+                Call mCall = client.newCall(request);
+                mCall.enqueue(new MyCallback());
+            }
+                break;
+        }
+        progressBar.setVisibility(View.VISIBLE);
+
     }
 
     private class MyCallback implements Callback {
@@ -82,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 200:
                     String response = (String) msg.obj;
-                    textView.setText(response);
+                    textViewGet.setText(response);
+                    System.out.println(response);
                     break;
                 case 300:
                     int percent = msg.arg1;

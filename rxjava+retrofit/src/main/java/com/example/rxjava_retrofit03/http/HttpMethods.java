@@ -4,17 +4,19 @@ package com.example.rxjava_retrofit03.http;
 import com.example.rxjava_retrofit03.entity.HttpResult;
 import com.example.rxjava_retrofit03.entity.MovieSubjectsBean;
 
+import org.reactivestreams.Subscriber;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 /**
  * Created by liukun on 16/3/9.
@@ -39,7 +41,7 @@ public class HttpMethods {
                 //modify by zqikai 20160317 for 对http请求结果进行统一的预处理 GosnResponseBodyConvert
 //                .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(ResponseConvertFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(BASE_URL)
                 .build();
 
@@ -58,19 +60,33 @@ public class HttpMethods {
 
     /**
      * 用于获取豆瓣电影Top250的数据
-     * @param subscriber  由调用者传过来的观察者对象
+     * @param observer  由调用者传过来的观察者对象
      * @param start 起始位置
      * @param count 获取长度
      */
-    public void getTopMovie(Subscriber<List<MovieSubjectsBean>> subscriber, int start, int count){
+    public void getTopMovieByObserver(Observer<List<MovieSubjectsBean>> observer, int start, int count){
 
         Observable observable = movieService.getTopMovie(start, count)
                 .map(new HttpResultFunc<List<MovieSubjectsBean>>());
 
-        toSubscribe(observable, subscriber);
+        toSubscribe(observable, observer);
     }
 
-    private <T> void toSubscribe(Observable<T> o, Subscriber<T> s){
+    /**
+     * 用于获取豆瓣电影Top250的数据
+     * @param observer  由调用者传过来的观察者对象
+     * @param start 起始位置
+     * @param count 获取长度
+     */
+    public void getTopMovieBySubscriber(Subscriber<List<MovieSubjectsBean>> observer, int start, int count){
+
+        Observable observable = movieService.getTopMovie(start, count)
+                .map(new HttpResultFunc<List<MovieSubjectsBean>>());
+
+        toSubscribe(observable, (Observer) observer);
+    }
+
+    private <T> void toSubscribe(Observable<T> o, Observer<T> s){
          o.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -82,14 +98,14 @@ public class HttpMethods {
      *
      * @param <T>   Subscriber真正需要的数据类型，也就是Data部分的数据类型
      */
-    private class HttpResultFunc<T> implements Func1<HttpResult<T>, T>{
+    private class HttpResultFunc<T> implements Function<HttpResult<T>, T> {
 
         @Override
-        public T call(HttpResult<T> httpResult) {
-            if (httpResult.getCount() == 0) {
+        public T apply(HttpResult<T> tHttpResult) throws Exception {
+            if (tHttpResult.getCount() == 0) {
                 throw new ApiException(100);
             }
-            return httpResult.getSubjects();
+            return tHttpResult.getSubjects();
         }
     }
 
