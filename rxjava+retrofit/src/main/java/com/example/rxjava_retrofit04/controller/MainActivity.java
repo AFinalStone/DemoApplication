@@ -10,10 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rxjava_retrofit01.R;
+import com.example.rxjava_retrofit04.entity.HttpResult;
 import com.example.rxjava_retrofit04.entity.MovieSubjectsBean;
-import com.example.rxjava_retrofit04.entity.MsgCode;
 import com.example.rxjava_retrofit04.model.MovieModel;
 import com.example.rxjava_retrofit04.model.MovieModelImpl;
+import com.example.rxjava_retrofit04.util.LogUtil;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -28,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private TextView tv_content;
-    private MovieModel<String> movieModel;
-    private Subscription subscription;
+    private MovieModel movieModel = new MovieModelImpl();
 
     ProgressDialog progressDialog;
+    Disposable disposable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +47,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.hide();
-
+                if(disposable != null && !disposable.isDisposed()){
+                    disposable.dispose();
+                }
             }
         });
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
         addContentView(button, layoutParams);
-
         progressDialog = new ProgressDialog(this);
-        movieModel = new MovieModelImpl();
+
     }
 
     public void onClick(View view) {
@@ -63,61 +65,81 @@ public class MainActivity extends AppCompatActivity {
 
     private void getMovieInfo() {
         progressDialog.show();
-        Subscriber<String> subscriber = new Subscriber<String>() {
+        movieModel.getMovieString(0, 10, new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                disposable = d;
+            }
+
+            @Override
+            public void onNext(String value) {
+                LogUtil.e("getMovieString",value);
+            }
 
             @Override
             public void onError(Throwable e) {
                 Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 progressDialog.hide();
-                System.out.println("onError被执行");
             }
 
             @Override
             public void onComplete() {
-                Toast.makeText(MainActivity.this, "Get Top Movie Completed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "onComplete被执行", Toast.LENGTH_SHORT).show();
                 progressDialog.hide();
-                System.out.println("onComplete被执行");
-            }
+                //重新开始新的请求
+                progressDialog.show();
+                movieModel.getMovieObject(0, 10, new Observer<HttpResult<List<MovieSubjectsBean>>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onSubscribe(Subscription s) {
-                subscription = s;
-                System.out.println("onSubscribe被执行");
-            }
+                    @Override
+                    public void onNext(HttpResult<List<MovieSubjectsBean>> value) {
+                        LogUtil.e("getMovieObject", value.toString());
+                    }
 
-            @Override
-            public void onNext(String movieEntity) {
-                System.out.println("onNext被执行");
-                System.out.println(movieEntity);
-                tv_content.setText(movieEntity.toString());
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        progressDialog.hide();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Toast.makeText(MainActivity.this, "onComplete被执行", Toast.LENGTH_SHORT).show();
+                        progressDialog.hide();
+
+                        //重新开始新的请求
+                        movieModel.getMovieObjectExt(0, 10, new Observer<List<MovieSubjectsBean>>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                disposable = d;
+                            }
+
+                            @Override
+                            public void onNext(List<MovieSubjectsBean> value) {
+                                LogUtil.e("getMovieObjectExt",value.toString());
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                progressDialog.hide();
+                            }
+
+                            @Override
+                            public void onComplete() {
+
+                                Toast.makeText(MainActivity.this, "onComplete被执行", Toast.LENGTH_SHORT).show();
+                                progressDialog.hide();
+                            }
+                        });
+                    }
+                });
             }
-        };
-//        observer = new Observer<MsgCode>() {
-//
-//            @Override
-//            public void onError(Throwable e) {
-//                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                progressDialog.hide();
-//            }
-//
-//            @Override
-//            public void onComplete() {
-//                Toast.makeText(MainActivity.this, "Get Top Movie Completed", Toast.LENGTH_SHORT).show();
-//                progressDialog.hide();
-//            }
-//
-//            @Override
-//            public void onSubscribe(Disposable d) {
-//
-//            }
-//
-//            @Override
-//            public void onNext(MsgCode msgCode) {
-//                System.out.println(msgCode);
-//                tv_content.setText(msgCode.toString());
-//            }
-//        };
-        movieModel.getMovieTop100(0, 10, subscriber);
-//        subscriber.unsubscribe();
+        });
+
+
     }
 }

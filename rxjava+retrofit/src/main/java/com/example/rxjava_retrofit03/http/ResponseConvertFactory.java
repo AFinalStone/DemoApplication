@@ -40,7 +40,7 @@ public class ResponseConvertFactory extends Converter.Factory{
     @Override
     public Converter<ResponseBody, ?> responseBodyConverter(Type type, Annotation[] annotations,
                                                             Retrofit retrofit) {
-        return new GsonResponseBodyConverter<>(gson,type);
+        return new GSonResponseBodyConverter<>(gson,type);
     }
 
 }

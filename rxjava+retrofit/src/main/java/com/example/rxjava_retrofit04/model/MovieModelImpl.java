@@ -1,7 +1,7 @@
 package com.example.rxjava_retrofit04.model;
 
+import com.example.rxjava_retrofit04.entity.HttpResult;
 import com.example.rxjava_retrofit04.entity.MovieSubjectsBean;
-import com.example.rxjava_retrofit04.entity.MsgCode;
 import com.example.rxjava_retrofit04.http.HttpMethods;
 
 import org.reactivestreams.Subscriber;
@@ -16,16 +16,21 @@ import io.reactivex.Observer;
  *  Rxjava+retrofit的基本使用方法
  */
 
-public class MovieModelImpl implements MovieModel<String> {
+public class MovieModelImpl implements MovieModel{
+
 
     @Override
-    public void getMovie(int start, int count, Observer<String> observer) {
-//        HttpMethods.getInstance().getTopMovieList(observer, 0, 10);
+    public void getMovieString(int start, int count, Observer<String> observer) {
+        HttpMethods.getInstance().getTopMovieString(observer,0,10);
     }
 
     @Override
-    public void getMovieTop100(int start, int count, Subscriber<String> subscriber) {
-        HttpMethods.getInstance().getTopMovieString(subscriber, 0, 10);
+    public void getMovieObject(int start, int count, Observer<HttpResult<List<MovieSubjectsBean>>> observer) {
+        HttpMethods.getInstance().getTopMovieObject(observer,0,10);
     }
 
+    @Override
+    public void getMovieObjectExt(int start, int count, Observer<List<MovieSubjectsBean>> observer) {
+        HttpMethods.getInstance().getTopMovieObjectExt(observer,0,10);
+    }
 }

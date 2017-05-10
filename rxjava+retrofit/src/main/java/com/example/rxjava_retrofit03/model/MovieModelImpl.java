@@ -12,19 +12,15 @@ import io.reactivex.Observer;
 /**
  * Created by afinalstone on 17-4-26.
  *  Rxjava+retrofit的基本使用方法
+ *  使用rxjava+retrofit进行封装网络请求，封装请求过程为httpMethods对象，并对返回相同格式的Http请求结果数据统一进行预处理
  */
 
 public class MovieModelImpl implements MovieModel<List<MovieSubjectsBean>> {
 
 
     @Override
-    public void getMovieByObserver(int start, int count, Observer<List<MovieSubjectsBean>> observer) {
+    public void getMovie(int start, int count, Observer<List<MovieSubjectsBean>> observer) {
         HttpMethods.getInstance().getTopMovieByObserver(observer, 0, 10);
-    }
-
-    @Override
-    public void getMovieBySubsuber(int start, int count, Subscriber<List<MovieSubjectsBean>> observer) {
-        HttpMethods.getInstance().getTopMovieBySubscriber(observer, 0, 10);
     }
 
 }

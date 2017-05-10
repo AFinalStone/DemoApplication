@@ -20,6 +20,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 /**
  * Created by liukun on 16/3/9.
+ * 使用rxjava+retrofit进行封装网络请求，封装请求过程为httpMethods对象，并对返回相同格式的Http请求结果数据统一进行预处理
  */
 public class HttpMethods {
 
@@ -38,8 +39,7 @@ public class HttpMethods {
 
         retrofit = new Retrofit.Builder()
                 .client(builder.build())
-                //modify by zqikai 20160317 for 对http请求结果进行统一的预处理 GosnResponseBodyConvert
-//                .addConverterFactory(GsonConverterFactory.create())
+                //对http请求结果进行统一的预处理 GSonResponseBodyConvert
                 .addConverterFactory(ResponseConvertFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(BASE_URL)
@@ -66,31 +66,13 @@ public class HttpMethods {
      */
     public void getTopMovieByObserver(Observer<List<MovieSubjectsBean>> observer, int start, int count){
 
-        Observable observable = movieService.getTopMovie(start, count)
-                .map(new HttpResultFunc<List<MovieSubjectsBean>>());
-
-        toSubscribe(observable, observer);
-    }
-
-    /**
-     * 用于获取豆瓣电影Top250的数据
-     * @param observer  由调用者传过来的观察者对象
-     * @param start 起始位置
-     * @param count 获取长度
-     */
-    public void getTopMovieBySubscriber(Subscriber<List<MovieSubjectsBean>> observer, int start, int count){
-
-        Observable observable = movieService.getTopMovie(start, count)
-                .map(new HttpResultFunc<List<MovieSubjectsBean>>());
-
-        toSubscribe(observable, (Observer) observer);
-    }
-
-    private <T> void toSubscribe(Observable<T> o, Observer<T> s){
-         o.subscribeOn(Schedulers.io())
+        movieService.getTopMovie(start, count)
+                .map(new HttpResultFunc<List<MovieSubjectsBean>>())
+                .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(s);
+                .subscribe(observer);
+
     }
 
     /**
@@ -103,7 +85,7 @@ public class HttpMethods {
         @Override
         public T apply(HttpResult<T> tHttpResult) throws Exception {
             if (tHttpResult.getCount() == 0) {
-                throw new ApiException(100);
+                throw new RuntimeException("请求信息错误");
             }
             return tHttpResult.getSubjects();
         }

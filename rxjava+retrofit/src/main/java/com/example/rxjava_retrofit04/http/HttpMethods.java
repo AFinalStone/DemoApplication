@@ -1,15 +1,10 @@
 package com.example.rxjava_retrofit04.http;
 
 
-import android.graphics.drawable.Drawable;
-
-import com.example.rxjava_retrofit03.http.*;
 import com.example.rxjava_retrofit04.entity.HttpResult;
 import com.example.rxjava_retrofit04.entity.MovieSubjectsBean;
-import com.example.rxjava_retrofit04.entity.MsgCode;
 
 import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -20,7 +15,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
-import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -35,8 +29,10 @@ public class HttpMethods {
 
     private static final int DEFAULT_TIMEOUT = 5;
 
-    private MovieService movieService_jsonObj;
-    private MovieService movieService_String;
+    private WebService webService_string;
+    private WebService webService_jsonObj;
+    //对返回结果进行统一预处理
+    private WebService webService_jsonObjExt;
 
     //构造方法私有
     private HttpMethods() {
@@ -51,7 +47,7 @@ public class HttpMethods {
                 .baseUrl(BASE_URL)
                 .build();
 
-        movieService_jsonObj = retrofit_jsonObj.create(MovieService.class);
+        webService_jsonObj = retrofit_jsonObj.create(WebService.class);
 
 
         Retrofit retrofit_String = new Retrofit.Builder()
@@ -61,8 +57,15 @@ public class HttpMethods {
                 .baseUrl(BASE_URL)
                 .build();
 
-        movieService_String = retrofit_jsonObj.create(MovieService.class);
+        webService_string = retrofit_String.create(WebService.class);
 
+        Retrofit retrofit_result = new Retrofit.Builder()
+                .client(builder.build())
+                .addConverterFactory(ResponseConvertFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl(BASE_URL)
+                .build();
+        webService_jsonObjExt = retrofit_result.create(WebService.class);
 
     }
 
@@ -82,31 +85,40 @@ public class HttpMethods {
      * @param start 起始位置
      * @param count 获取长度
      */
-    public void getTopMovieList(Observer<List<MovieSubjectsBean>> observer, int start, int count){
+    public void getTopMovieString(Observer<String> observer, int start, int count){
 
-        Observable observable = movieService_jsonObj.getTopMovieList(start, count)
-                .map(new HttpResultFunc<List<MovieSubjectsBean>>());
-
+        Observable observable = webService_string.getTopMovieString(start, count);
         toSubscribe(observable, observer);
 
     }
 
     /**
      * 用于获取豆瓣电影Top250的数据
-     * @param subscriber  由调用者传过来的观察者对象
+     * @param observer  由调用者传过来的观察者对象
      * @param start 起始位置
      * @param count 获取长度
      */
-    public void getTopMovieString(Subscriber<String> subscriber, int start, int count){
+    public void getTopMovieObject(Observer<HttpResult<List<MovieSubjectsBean>>> observer, int start, int count){
 
-        Observable observable = movieService_String.getTopMovieString(start, count);
-
-        observable.subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((Observer)subscriber);
+        Observable observable = webService_jsonObj.getTopMovieObject(start, count);
+        toSubscribe(observable, observer);
 
     }
+
+    /**
+     * 用于获取豆瓣电影Top250的数据
+     * @param observer  由调用者传过来的观察者对象
+     * @param start 起始位置
+     * @param count 获取长度
+     */
+    public void getTopMovieObjectExt(Observer<List<MovieSubjectsBean>> observer, int start, int count){
+
+        Observable observable = webService_jsonObj.getTopMovieObject(start, count)
+                .map(new HttpResultFunc<List<MovieSubjectsBean>>());
+        toSubscribe(observable, observer);
+
+    }
+
 
     private <T> void toSubscribe(Observable<T> o, Observer<T> s){
         o.subscribeOn(Schedulers.io())
@@ -125,7 +137,7 @@ public class HttpMethods {
         @Override
         public T apply(HttpResult<T> tHttpResult) throws Exception {
             if (tHttpResult.getCount() == 0) {
-                throw new com.example.rxjava_retrofit03.http.ApiException(100);
+                throw new RuntimeException("请求信息错误");
             }
             return tHttpResult.getSubjects();
         }

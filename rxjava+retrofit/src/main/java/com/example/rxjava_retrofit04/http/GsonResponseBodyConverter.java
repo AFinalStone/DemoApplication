@@ -31,7 +31,7 @@ class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
             HttpResult httpResult = gson.fromJson(response, HttpResult.class);
             //
             if (httpResult.getCount() == 0) {
-                throw new ApiException(100);
+                throw new RuntimeException("请求信息错误");
             }
             return gson.fromJson(response, type);
 

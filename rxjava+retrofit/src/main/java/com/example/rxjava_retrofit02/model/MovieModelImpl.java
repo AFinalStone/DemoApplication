@@ -8,6 +8,7 @@ import io.reactivex.Observer;
 /**
  * Created by afinalstone on 17-4-26.
  *  Rxjava+retrofit的基本使用方法
+ *  使用rxjava+retrofit进行封装网络请求，并封装请求对象为httpMethods对象
  */
 
 public class MovieModelImpl implements MovieModel<MovieEntity> {

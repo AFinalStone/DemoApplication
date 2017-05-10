@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by afinalstone on 17-4-26.
+ * 使用rxjava+retrofit进行封装网络请求，并封装请求对象为httpMethods对象
  */
 
 public class HttpMethods {

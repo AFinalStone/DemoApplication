@@ -10,6 +10,5 @@ import io.reactivex.Observer;
  */
 
 public interface MovieModel<T> {
-    public void getMovieByObserver(int start, int count, Observer<T> observer);
-    public void getMovieBySubsuber(int start, int count, Subscriber<T> observer);
+    public void getMovie(int start, int count, Observer<T> observer);
 }

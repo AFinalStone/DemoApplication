@@ -13,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by afinalstone on 17-4-26.
  *  Rxjava+retrofit的基本使用方法
+ *  直接使用rxjava+retrofit进行网络请求
  */
 
 public class MovieModelImpl implements MovieModel<MovieBean> {
