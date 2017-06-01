@@ -4,8 +4,6 @@ package com.example.rxjava_retrofit04.http;
 import com.example.rxjava_retrofit04.entity.HttpResult;
 import com.example.rxjava_retrofit04.entity.MovieSubjectsBean;
 
-import org.reactivestreams.Subscriber;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -31,8 +29,6 @@ public class HttpMethods {
 
     private WebService webService_string;
     private WebService webService_jsonObj;
-    //对返回结果进行统一预处理
-    private WebService webService_jsonObjExt;
 
     //构造方法私有
     private HttpMethods() {
@@ -59,13 +55,13 @@ public class HttpMethods {
 
         webService_string = retrofit_String.create(WebService.class);
 
-        Retrofit retrofit_result = new Retrofit.Builder()
-                .client(builder.build())
-                .addConverterFactory(ResponseConvertFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl(BASE_URL)
-                .build();
-        webService_jsonObjExt = retrofit_result.create(WebService.class);
+//        Retrofit retrofit_result = new Retrofit.Builder()
+//                .client(builder.build())
+//                .addConverterFactory(ResponseConvertFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .baseUrl(BASE_URL)
+//                .build();
+//        webService_jsonObjExt = retrofit_result.create(WebService.class);
 
     }
 
