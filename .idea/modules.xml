@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DemoApplication.iml" filepath="$PROJECT_DIR$/DemoApplication.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MPAndroidChartDemo/mpandroidchartdemo.iml" filepath="$PROJECT_DIR$/MPAndroidChartDemo/mpandroidchartdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MultisTreeView/multistreeview.iml" filepath="$PROJECT_DIR$/MultisTreeView/multistreeview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" filepath="$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" filepath="$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" />
       <module fileurl="file://$PROJECT_DIR$/loginByWX/loginByWX.iml" filepath="$PROJECT_DIR$/loginByWX/loginByWX.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvc/mvc.iml" filepath="$PROJECT_DIR$/mvc/mvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvp/mvp.iml" filepath="$PROJECT_DIR$/mvp/mvp.iml" />
