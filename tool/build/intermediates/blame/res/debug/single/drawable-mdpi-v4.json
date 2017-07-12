@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notification_bg_low_normal.9.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
-    },
-    {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png",

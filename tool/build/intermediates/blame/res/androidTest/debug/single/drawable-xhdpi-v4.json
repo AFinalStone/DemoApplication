@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\design_ic_visibility_off.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a3d1d48a415fa835a1a28ba0b1f02c6902c2adeb\\output\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
@@ -44,12 +44,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\notification_bg_normal.9.png",

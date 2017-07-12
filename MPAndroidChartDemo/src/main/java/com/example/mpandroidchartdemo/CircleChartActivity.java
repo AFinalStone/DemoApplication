@@ -52,7 +52,9 @@ public class CircleChartActivity extends BaseActivity implements OnChartValueSel
 
         tvX = (TextView) findViewById(R.id.tvXMax);
         tvY = (TextView) findViewById(R.id.tvYMax);
-
+//        tvX.setTypeface(mTfLight);
+//        tvX.setTextSize(100);
+//        tvX.setText(generateCenterSpannableText());
         mSeekBarX = (SeekBar) findViewById(R.id.seekBar1);
         mSeekBarY = (SeekBar) findViewById(R.id.seekBar2);
         mSeekBarX.setProgress(4);
@@ -62,20 +64,13 @@ public class CircleChartActivity extends BaseActivity implements OnChartValueSel
         mSeekBarY.setOnSeekBarChangeListener(this);
 		
         mChart = (PieChart) findViewById(R.id.chart1);
-        //显示白分布
+        //是否显示分布百分比
         mChart.setUsePercentValues(true);
         //设置图表名称信息以及名称描述信息位置
         mChart.getDescription().setText("测试饼图");
         mChart.getDescription().setPosition(100,100);
         //设置图表外，布局内显示的偏移量
         mChart.setExtraOffsets(5, 10, 5, 5);
-        //设置是否隐藏饼图上每个部分的文字，只显示每个部分百分比
-        mChart.setDrawEntryLabels(true);
-        //设置饼图上面的文字颜色,样式和大小
-        mChart.setEntryLabelColor(Color.RED);
-        mChart.setEntryLabelTypeface(mTfRegular);
-        mChart.setEntryLabelTextSize(12f);
-
 
         //设置圆心的字体样式以及展示的字体内容
         mChart.setCenterTextTypeface(mTfLight);
@@ -213,9 +208,16 @@ public class CircleChartActivity extends BaseActivity implements OnChartValueSel
         //
         PieDataSet dataSet = new PieDataSet(entries, "模块比例");
         dataSet.setDrawIcons(false);
+        //设置是否隐藏饼图上每个部分的文字描述，只显示每个部分百分比
+        mChart.setDrawEntryLabels(true);
+        //设置饼图上饼图上每个部分的文字描述的样式和大小
+        mChart.setEntryLabelColor(Color.RED);
+        mChart.setEntryLabelTypeface(mTfRegular);
+        mChart.setEntryLabelTextSize(12f);
 
         //在图表外部对图表的每个部分进行文字描述,设置这些文字的位置和样式
         Legend l = mChart.getLegend();
+        l.setEnabled(true);//是否隐藏这些文字描述
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
@@ -242,6 +244,17 @@ public class CircleChartActivity extends BaseActivity implements OnChartValueSel
         colors.add(ColorTemplate.getHoloBlue());
         dataSet.setColors(colors);
 
+        //设置是否有线条延伸出去标记当前所占比例
+        dataSet.setValueLinePart1OffsetPercentage(100f);
+        dataSet.setValueLineColor(Color.BLACK);
+        dataSet.setValueLinePart1Length(0.3f);
+        dataSet.setValueLinePart2Length(0.7f);
+        //控制模块文字描述是否放在线条外面
+        dataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        //控制模块百分比描述是否放在线条外面
+
+//        dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        //设置图表中每个模块所占比例的文字样式
         //设置图表中每个模块所占比例的文字样式
         PieData data = new PieData(dataSet);
         data.setValueFormatter(new PercentFormatter());

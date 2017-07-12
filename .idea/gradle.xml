@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/sqlite-dbflow" />
             <option value="$PROJECT_DIR$/statebar" />
             <option value="$PROJECT_DIR$/tool" />
+            <option value="$PROJECT_DIR$/vectordrawable" />
             <option value="$PROJECT_DIR$/viewpager" />
           </set>
         </option>

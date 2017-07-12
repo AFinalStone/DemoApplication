@@ -1,2 +1,2 @@
-include ':loginByWX', ':mvc', ':sqlite', ':sqlite-dbflow', ':okhttp', ':retrofit', ':rxjava', ':mvp', ':rxjava+retrofit', ':statebar', ':MultisTreeView', ':viewpager', ':MPAndroidChartDemo'
+include ':loginByWX', ':mvc', ':sqlite', ':sqlite-dbflow', ':okhttp', ':retrofit', ':rxjava', ':mvp', ':rxjava+retrofit', ':statebar', ':MultisTreeView', ':viewpager', ':MPAndroidChartDemo', ':vectordrawable'
 include ':tool'
