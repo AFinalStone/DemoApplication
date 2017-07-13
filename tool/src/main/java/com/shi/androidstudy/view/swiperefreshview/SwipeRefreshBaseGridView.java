@@ -61,6 +61,7 @@ public abstract class SwipeRefreshBaseGridView<T extends GridView> extends Linea
 		scrollView.setFillViewport(true);
 		//初始化ItemView并添加到scrollView中
 		mGridView = initItemView(context, attrs);
+		mGridView.setId(NO_ID);
 		ViewGroup.LayoutParams groupParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 		swipeRefreshLayout.addView(scrollView,groupParams);
 		scrollView.addView(mGridView);

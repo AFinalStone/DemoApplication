@@ -14,7 +14,6 @@ import android.net.wifi.WifiManager;
 import android.os.Environment;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -39,7 +38,6 @@ public class SystemUtil {
         try {
             packageInfo = packageManager.getPackageInfo(mContext.getPackageName(), 0);
         } catch (NameNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if (packageInfo != null) {
@@ -59,7 +57,6 @@ public class SystemUtil {
         try {
             packageInfo = packageManager.getPackageInfo(mContext.getPackageName(), 0);
         } catch (NameNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if (packageInfo != null) {
@@ -79,30 +76,6 @@ public class SystemUtil {
             return Environment.getExternalStorageDirectory();// 获取跟目录
         }
         return null;
-    }
-
-    /*****
-     * 返回指定文件夹和文件名的文件路径
-     *
-     * @param FolderName
-     * @param fileName
-     * @return
-     */
-    public static String getFilePath(String FolderName, String fileName) {
-        String downDirectory = null;
-        File pathSDcard = whetherExistSDcard();
-        if (pathSDcard != null) {
-            //判断文件夹是否为空
-            if (TextUtils.isEmpty(FolderName)) {
-                FolderName = "";
-            }
-            //创建文件夹
-            if (createFolder(FolderName)) {
-                downDirectory = pathSDcard.toString() + File.separator + FolderName
-                        + File.separator + fileName;
-            }
-        }
-        return downDirectory;
     }
 
     /****
@@ -161,27 +134,6 @@ public class SystemUtil {
         }
     }
 
-    /****
-     * 删除文件夹或者文件
-     * @param file
-     * @return
-     */
-    public static boolean deleteDirectory(File file) {
-        if (file.isDirectory()) {
-            File[] filelist = file.listFiles();
-            for (int i = 0; i < filelist.length; i++) {
-                deleteDirectory(filelist[i]);
-            }
-            if (!file.delete()) {
-                return false;
-            }
-        } else {
-            if (!file.delete()) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     /****
      * 判断是否有网络连接

@@ -2,8 +2,11 @@ package com.shi.androidstudy.view.swiperefreshview;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
@@ -22,7 +25,12 @@ public abstract class SwipeRefreshBaseRecycleView<T extends RecyclerView> extend
 	/**是否开启底部刷新功能**/
 	private boolean IfOpenBottomRefresh = false;
 
-	public SwipeRefreshBaseRecycleView(Context context, AttributeSet attrs) {
+	public SwipeRefreshBaseRecycleView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+		super(context, attrs);
+		initView(context, attrs, defStyle);
+	}
+
+	public SwipeRefreshBaseRecycleView(Context context, @Nullable AttributeSet attrs) {
 		super(context, attrs);
 		initView(context, attrs);
 	}
@@ -31,12 +39,20 @@ public abstract class SwipeRefreshBaseRecycleView<T extends RecyclerView> extend
 		super(context);
 		initView(context);
 	}
-	
+
+	private void initView(Context context, AttributeSet attrs, int defStyle) {
+		setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
+				Color.CYAN, 0xFFFE5D14, Color.MAGENTA);
+		mRecycleView =  initItemView(context, attrs,defStyle);
+		mRecycleView.setId(NO_ID);
+		addView(mRecycleView);
+	}
 
 	private void initView(Context context, AttributeSet attrs) {
 		setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
 				Color.CYAN, 0xFFFE5D14, Color.MAGENTA);
 		mRecycleView =  initItemView(context, attrs);
+		mRecycleView.setId(NO_ID);
 		addView(mRecycleView);
 	}
 
@@ -44,9 +60,13 @@ public abstract class SwipeRefreshBaseRecycleView<T extends RecyclerView> extend
 		setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
 				Color.CYAN, 0xFFFE5D14, Color.MAGENTA);
 		mRecycleView = initItemView(context);
+		mRecycleView.setId(NO_ID);
 		addView(mRecycleView);
 	}
 	
+	/**把需要上拉，和下拉刷新的控件初始化并添加到SwipeRefreshLayout中**/
+	public abstract T initItemView(Context context,AttributeSet attrs, int defStyle);
+
 	/**把需要上拉，和下拉刷新的控件初始化并添加到SwipeRefreshLayout中**/
 	public abstract T initItemView(Context context,AttributeSet attrs);
 	
@@ -87,6 +107,18 @@ public abstract class SwipeRefreshBaseRecycleView<T extends RecyclerView> extend
 
 	/** 获取当前ItemView,方便以后对自己添加近来的界面进行操作 **/
 	public T getRecycleView() {
+		return mRecycleView;
+	}
+
+	/** 获取当前ItemView,方便以后对自己添加近来的界面进行操作 **/
+	public T getRecycleView_LinearLayoutManager() {
+		mRecycleView.setLayoutManager(new LinearLayoutManager(mRecycleView.getContext()));
+		return mRecycleView;
+	}
+
+	/** 获取当前ItemView,方便以后对自己添加近来的界面进行操作 **/
+	public T getRecycleView_GridLayoutManager() {
+		mRecycleView.setLayoutManager(new GridLayoutManager(mRecycleView.getContext(),3));
 		return mRecycleView;
 	}
 

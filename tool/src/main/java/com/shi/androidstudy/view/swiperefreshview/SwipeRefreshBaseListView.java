@@ -39,6 +39,7 @@ public abstract class SwipeRefreshBaseListView<T extends ListView> extends
 		setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
 				Color.CYAN, 0xFFFE5D14, Color.MAGENTA);
 		mListView =  initItemView(context, attrs);
+		mListView.setId(NO_ID);
 		addView(mListView);
 	}
 
@@ -46,6 +47,7 @@ public abstract class SwipeRefreshBaseListView<T extends ListView> extends
 		setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW,
 				Color.CYAN, 0xFFFE5D14, Color.MAGENTA);
 		mListView = initItemView(context);
+		mListView.setId(NO_ID);
 		addView(mListView);
 	}
 	

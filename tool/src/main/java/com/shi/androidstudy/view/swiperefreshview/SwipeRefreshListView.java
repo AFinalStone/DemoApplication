@@ -12,7 +12,7 @@ import android.widget.ListView;
  * @author SHI
  * 2016年3月23日 14:12:51
  */  
-public class SwipeRefreshListView extends SwipeRefreshBaseListView<ListView>{
+public class SwipeRefreshListView extends SwipeRefreshBaseListView<ListView> {
 
 	
 	public SwipeRefreshListView(Context context, AttributeSet attrs) {

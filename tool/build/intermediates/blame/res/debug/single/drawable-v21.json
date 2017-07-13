@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\background_item_touch.xml",
+        "source": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\src\\main\\res\\drawable-v21\\background_item_touch.xml"
+    },
+    {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\a3d1d48a415fa835a1a28ba0b1f02c6902c2adeb\\output\\res\\drawable-v21\\avd_show_password.xml"
     },

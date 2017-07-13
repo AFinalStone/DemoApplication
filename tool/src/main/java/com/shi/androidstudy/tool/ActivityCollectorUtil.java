@@ -1,7 +1,6 @@
 package com.shi.androidstudy.tool;
 
 
-
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -14,18 +13,29 @@ import java.util.List;
  */
 public class ActivityCollectorUtil {
 
-	public static List<AppCompatActivity> activities = new ArrayList<AppCompatActivity>();
-	public static void addActivity(AppCompatActivity activity) {
-		activities.add(activity);
-	}
-	public static void removeActivity(AppCompatActivity activity) {
-		activities.remove(activity);
-	}
-	public static void finishAll() {
-		for (AppCompatActivity activity : activities) {
-			if (!activity.isFinishing()) {
-				activity.finish();
-			}
-		}
-	}
+    public static List<AppCompatActivity> activities = new ArrayList<AppCompatActivity>();
+
+    public static void addActivity(AppCompatActivity activity) {
+        activities.add(activity);
+    }
+
+    public static void removeActivity(AppCompatActivity activity) {
+        activities.remove(activity);
+    }
+
+    public static void finishAll() {
+        for (AppCompatActivity activity : activities) {
+            if (!activity.isFinishing()) {
+                activity.finish();
+            }
+        }
+    }
+
+    public static AppCompatActivity getTopActivity() {
+        int topPosition = activities.size() - 1;
+        if (topPosition >= 0) {
+            return activities.get(topPosition);
+        }
+        return null;
+    }
 }

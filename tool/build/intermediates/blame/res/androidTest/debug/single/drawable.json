@@ -20,6 +20,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_corner_bg.xml",
+        "source": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_corner_bg.xml"
+    },
+    {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\notification_bg_low.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable\\notification_bg_low.xml"
     },
@@ -58,6 +62,10 @@
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\background_item_touch.xml",
+        "source": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\bundles\\debug\\res\\drawable\\background_item_touch.xml"
     },
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_textfield_search_material.xml",

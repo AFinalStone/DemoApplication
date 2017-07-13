@@ -12,7 +12,7 @@ import android.util.AttributeSet;
  * @author SHI
  * 2016-12-21 10:22:56
  */  
-public class SwipeRefreshRecycleView extends SwipeRefreshBaseRecycleView<RecyclerView>{
+public class SwipeRefreshRecycleView extends SwipeRefreshBaseRecycleView<RecyclerView> {
 
 
 	public SwipeRefreshRecycleView(Context context, AttributeSet attrs) {
@@ -21,6 +21,11 @@ public class SwipeRefreshRecycleView extends SwipeRefreshBaseRecycleView<Recycle
 
 	public SwipeRefreshRecycleView(Context context) {
 		super(context);
+	}
+
+	@Override
+	public RecyclerView initItemView(Context context, AttributeSet attrs, int defStyle) {
+		return new RecyclerView(context,attrs,defStyle);
 	}
 
 	@Override
