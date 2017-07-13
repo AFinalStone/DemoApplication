@@ -108,16 +108,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\layout\\slider_layout.xml",
+        "source": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\src\\main\\res\\layout\\slider_layout.xml"
+    },
+    {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\layout\\notification_template_icon_group.xml"
     },
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\layout\\slider_layout.xml",
-        "source": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\src\\main\\res\\layout\\slider_layout.xml"
     },
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",

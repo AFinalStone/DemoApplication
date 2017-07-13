@@ -204,12 +204,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\render_type_default.xml",
         "source": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\bundles\\debug\\res\\layout\\render_type_default.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\794951b565f910d6a47e89c71498eb374ab47bec\\output\\res\\layout\\abc_screen_content_include.xml"
     },
     {
         "merged": "D:\\Android\\AndroidProject\\DemoApplication\\tool\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_part_chronometer.xml",

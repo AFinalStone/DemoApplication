@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AnimatedVectorDrawable/AnimatedVectorDrawable.iml" filepath="$PROJECT_DIR$/AnimatedVectorDrawable/AnimatedVectorDrawable.iml" />
       <module fileurl="file://$PROJECT_DIR$/DemoApplication.iml" filepath="$PROJECT_DIR$/DemoApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" filepath="$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" filepath="$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" />
@@ -16,7 +17,6 @@
       <module fileurl="file://$PROJECT_DIR$/sqlite-dbflow/sqlite-dbflow.iml" filepath="$PROJECT_DIR$/sqlite-dbflow/sqlite-dbflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/statebar/statebar.iml" filepath="$PROJECT_DIR$/statebar/statebar.iml" />
       <module fileurl="file://$PROJECT_DIR$/tool/tool.iml" filepath="$PROJECT_DIR$/tool/tool.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vectordrawable/vectordrawable.iml" filepath="$PROJECT_DIR$/vectordrawable/vectordrawable.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpager/viewpager.iml" filepath="$PROJECT_DIR$/viewpager/viewpager.iml" />
     </modules>
   </component>

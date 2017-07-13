@@ -27,7 +27,7 @@ public class UserBiz implements IUserBiz
                     e.printStackTrace();
                 }
                 //模拟登录成功
-                if ("zhy".equals(username) && "123".equals(password))
+                if ("AFinalStone".equals(username) && "123456".equals(password))
                 {
                     User user = new User();
                     user.setUsername(username);

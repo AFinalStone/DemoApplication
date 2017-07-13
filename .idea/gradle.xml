@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AnimatedVectorDrawable" />
             <option value="$PROJECT_DIR$/MPAndroidChartDemo" />
             <option value="$PROJECT_DIR$/MultisTreeView" />
             <option value="$PROJECT_DIR$/loginByWX" />
@@ -21,7 +22,6 @@
             <option value="$PROJECT_DIR$/sqlite-dbflow" />
             <option value="$PROJECT_DIR$/statebar" />
             <option value="$PROJECT_DIR$/tool" />
-            <option value="$PROJECT_DIR$/vectordrawable" />
             <option value="$PROJECT_DIR$/viewpager" />
           </set>
         </option>
