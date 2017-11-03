@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AnimatedVectorDrawable" />
+            <option value="$PROJECT_DIR$/Dagger2" />
             <option value="$PROJECT_DIR$/MPAndroidChartDemo" />
             <option value="$PROJECT_DIR$/MultisTreeView" />
             <option value="$PROJECT_DIR$/loginByWX" />

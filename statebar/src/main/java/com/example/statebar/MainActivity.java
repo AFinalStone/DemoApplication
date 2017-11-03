@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
 
-import com.shi.androidstudy.tool.statebartool.ImmersionBar;
+import com.shi.androidstudy.tool.statebar.StateBarUtil;
 
 public class MainActivity extends BaseActivity {
 
@@ -13,7 +13,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImmersionBar.with(this).transparentBar().init();
+        StateBarUtil.with(this).transparentBar().init();
         setContentView(R.layout.activity_main);
 //        toolbar = (Toolbar) findViewById(R.id.toolbar);
         seekBar = (SeekBar) findViewById(R.id.seek_bar);
@@ -21,7 +21,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 float alpha = (float) progress / 100;
-                ImmersionBar.with(MainActivity.this)
+                StateBarUtil.with(MainActivity.this)
                         .barColorTransform(R.color.orange)
                         .navigationBarColorTransform(R.color.tans)
 //                        .addViewSupportTransformColor(toolbar)
@@ -45,13 +45,13 @@ public class MainActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_status_color:
-                ImmersionBar.with(this).statusBarColor(R.color.colorAccent).removeSupportView().init();
+                StateBarUtil.with(this).statusBarColor(R.color.colorAccent).removeSupportView().init();
                 break;
             case R.id.btn_navigation_color:
-                ImmersionBar.with(this).navigationBarColor(R.color.colorAccent).init();
+                StateBarUtil.with(this).navigationBarColor(R.color.colorAccent).init();
                 break;
             case R.id.btn_color:
-                ImmersionBar.with(this)
+                StateBarUtil.with(this)
                         .transparentStatusBar()
                         .navigationBarColor(R.color.colorPrimary)
                         .init();
