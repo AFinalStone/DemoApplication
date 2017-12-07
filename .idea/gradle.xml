@@ -8,22 +8,26 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/AnimatedVectorDrawable" />
+            <option value="$PROJECT_DIR$/ClearEditText" />
             <option value="$PROJECT_DIR$/Dagger2" />
             <option value="$PROJECT_DIR$/MPAndroidChartDemo" />
+            <option value="$PROJECT_DIR$/MVC" />
+            <option value="$PROJECT_DIR$/MVP" />
             <option value="$PROJECT_DIR$/MultisTreeView" />
-            <option value="$PROJECT_DIR$/loginByWX" />
-            <option value="$PROJECT_DIR$/mvc" />
-            <option value="$PROJECT_DIR$/mvp" />
-            <option value="$PROJECT_DIR$/okhttp" />
-            <option value="$PROJECT_DIR$/retrofit" />
-            <option value="$PROJECT_DIR$/rxjava" />
-            <option value="$PROJECT_DIR$/rxjava+retrofit" />
-            <option value="$PROJECT_DIR$/sqlite" />
-            <option value="$PROJECT_DIR$/sqlite-dbflow" />
-            <option value="$PROJECT_DIR$/statebar" />
-            <option value="$PROJECT_DIR$/tool" />
-            <option value="$PROJECT_DIR$/viewpager" />
+            <option value="$PROJECT_DIR$/OkHttp" />
+            <option value="$PROJECT_DIR$/Retrofit" />
+            <option value="$PROJECT_DIR$/RxJava" />
+            <option value="$PROJECT_DIR$/RxJava+Retrofit" />
+            <option value="$PROJECT_DIR$/SearchView" />
+            <option value="$PROJECT_DIR$/Sqlite" />
+            <option value="$PROJECT_DIR$/Sqlite-DbFlow" />
+            <option value="$PROJECT_DIR$/Sqlite-GreenDao" />
+            <option value="$PROJECT_DIR$/Statebar沉浸状态栏" />
+            <option value="$PROJECT_DIR$/Tool" />
+            <option value="$PROJECT_DIR$/ViewPager" />
+            <option value="$PROJECT_DIR$/微信登录" />
+            <option value="$PROJECT_DIR$/扫描二维码" />
+            <option value="$PROJECT_DIR$/数字键盘" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

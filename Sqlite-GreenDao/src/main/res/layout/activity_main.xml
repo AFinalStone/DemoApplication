@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/singObjectAdd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="单个对象添加" />
+
+        <Button
+            android:id="@+id/singObjectUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="单个对象修改" />
+
+        <Button
+            android:id="@+id/singObjectSelect"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="单个对象查询" />
+
+        <Button
+            android:id="@+id/singObjectDelete"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="单个对象删除" />
+
+        <Button
+            android:id="@+id/mulObjectSelect"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="多个对象的查询" />
+
+        <Button
+            android:id="@+id/mulObjectSelectByWhere"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="多个对象的条件查询" />
+
+    </LinearLayout>
+</ScrollView>

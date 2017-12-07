@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="input_pay_pwd">请输入交易密码</string>
+    <string name="retrieve_password">忘记密码？</string>
+</resources>
