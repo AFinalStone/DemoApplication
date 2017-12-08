@@ -38,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-
                 break;
             case R.id.btn_loginByQQ:
                 loginQQ(QQ.NAME);
