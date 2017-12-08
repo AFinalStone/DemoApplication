@@ -127,6 +127,8 @@ public class CaptureFragment extends Fragment implements SurfaceHolder.Callback 
             handler = null;
         }
         CameraManager.get().closeDriver();
+        viewfinderView.stopScanLight();
+
     }
 
     public void start(){
@@ -146,6 +148,7 @@ public class CaptureFragment extends Fragment implements SurfaceHolder.Callback 
         }
         initBeepSound();
         vibrate = true;
+        viewfinderView.startScanLight();
     }
 
     @Override

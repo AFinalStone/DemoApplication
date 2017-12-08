@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -160,7 +161,7 @@ public class PasswordView extends RelativeLayout {
     }
 
     //设置监听方法，在第6位输入完成后触发
-    public void setOnFinishInput() {
+    public void setOnPasswordInputListener(final OnPasswordInputListener passwordInputFinish) {
         tvList[5].addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -184,13 +185,13 @@ public class PasswordView extends RelativeLayout {
                     }
 
                     //校验支付密码
-                    final String finalStrPassword = strPassword;
-
-                    //pass.inputFinish(strPassword);    //接口中要实现的方法，完成密码输入完成后的响应逻辑
+                    passwordInputFinish.onPasswordInputFinish(strPassword);    //接口中要实现的方法，完成密码输入完成后的响应逻辑
                 }
             }
         });
     }
+
+
 
     public VirtualKeyboardView getVirtualKeyboardView() {
 
@@ -214,5 +215,9 @@ public class PasswordView extends RelativeLayout {
             currentIndex = -1 ;
         }
         super.setVisibility(visibility);
+    }
+
+    public interface OnPasswordInputListener{
+        public void onPasswordInputFinish(String passWord);
     }
 }

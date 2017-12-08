@@ -8,6 +8,7 @@
     tools:context="com.example.myapplication2.MainActivity">
 
     <com.shi.androidstudy.widget.pswkeyboard.PasswordView
+        android:id="@+id/passwordView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
