@@ -42,16 +42,16 @@
             android:textCursorDrawable="@null"
             android:textSize="14sp" />
 
-        <ImageView
-            android:id="@+id/iv_cancel"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            android:background="@mipmap/delete"
-            android:scaleType="fitXY" />
-    </LinearLayout>
 
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_cancel"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/delete"
+        android:scaleType="fitXY" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecyclerView"
         android:layout_width="wrap_content"

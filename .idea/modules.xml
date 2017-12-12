@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ClearEditText/ClearEditText.iml" filepath="$PROJECT_DIR$/ClearEditText/ClearEditText.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dagger2/Dagger2.iml" filepath="$PROJECT_DIR$/Dagger2/Dagger2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DemoApplication.iml" filepath="$PROJECT_DIR$/.idea/DemoApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/DemoApplication.iml" filepath="$PROJECT_DIR$/DemoApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" filepath="$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
@@ -21,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/Tool/Tool.iml" filepath="$PROJECT_DIR$/Tool/Tool.iml" />
       <module fileurl="file://$PROJECT_DIR$/UploadPic/UploadPic.iml" filepath="$PROJECT_DIR$/UploadPic/UploadPic.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPager/ViewPager.iml" filepath="$PROJECT_DIR$/ViewPager/ViewPager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/优酷菜单/优酷菜单.iml" filepath="$PROJECT_DIR$/优酷菜单/优酷菜单.iml" />
       <module fileurl="file://$PROJECT_DIR$/微信登录/微信登录.iml" filepath="$PROJECT_DIR$/微信登录/微信登录.iml" />
       <module fileurl="file://$PROJECT_DIR$/扫描二维码/扫描二维码.iml" filepath="$PROJECT_DIR$/扫描二维码/扫描二维码.iml" />
       <module fileurl="file://$PROJECT_DIR$/数字键盘/数字键盘.iml" filepath="$PROJECT_DIR$/数字键盘/数字键盘.iml" />
