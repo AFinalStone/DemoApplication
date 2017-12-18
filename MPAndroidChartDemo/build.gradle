@@ -4,7 +4,7 @@ android {
     signingConfigs {
     }
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.mpandroidchartdemo"
         minSdkVersion 15
@@ -25,6 +25,5 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile project(':Tool')
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 }

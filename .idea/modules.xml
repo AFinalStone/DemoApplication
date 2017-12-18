@@ -15,12 +15,12 @@
       <module fileurl="file://$PROJECT_DIR$/RxJava/RxJava.iml" filepath="$PROJECT_DIR$/RxJava/RxJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJava+Retrofit/RxJava+Retrofit.iml" filepath="$PROJECT_DIR$/RxJava+Retrofit/RxJava+Retrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/SearchView/SearchView.iml" filepath="$PROJECT_DIR$/SearchView/SearchView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SelectPicture/SelectPicture.iml" filepath="$PROJECT_DIR$/SelectPicture/SelectPicture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite/Sqlite.iml" filepath="$PROJECT_DIR$/Sqlite/Sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" filepath="$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" filepath="$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" />
       <module fileurl="file://$PROJECT_DIR$/Statebar沉浸状态栏/Statebar沉浸状态栏.iml" filepath="$PROJECT_DIR$/Statebar沉浸状态栏/Statebar沉浸状态栏.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tool/Tool.iml" filepath="$PROJECT_DIR$/Tool/Tool.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UploadPic/UploadPic.iml" filepath="$PROJECT_DIR$/UploadPic/UploadPic.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPager/ViewPager.iml" filepath="$PROJECT_DIR$/ViewPager/ViewPager.iml" />
       <module fileurl="file://$PROJECT_DIR$/优酷菜单/优酷菜单.iml" filepath="$PROJECT_DIR$/优酷菜单/优酷菜单.iml" />
       <module fileurl="file://$PROJECT_DIR$/微信登录/微信登录.iml" filepath="$PROJECT_DIR$/微信登录/微信登录.iml" />

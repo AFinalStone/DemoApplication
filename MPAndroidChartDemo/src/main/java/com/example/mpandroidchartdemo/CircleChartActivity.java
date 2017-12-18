@@ -14,19 +14,19 @@ import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.shi.androidstudy.view.charting.animation.Easing;
-import com.shi.androidstudy.view.charting.charts.PieChart;
-import com.shi.androidstudy.view.charting.components.Legend;
-import com.shi.androidstudy.view.charting.data.Entry;
-import com.shi.androidstudy.view.charting.data.PieData;
-import com.shi.androidstudy.view.charting.data.PieDataSet;
-import com.shi.androidstudy.view.charting.data.PieEntry;
-import com.shi.androidstudy.view.charting.formatter.PercentFormatter;
-import com.shi.androidstudy.view.charting.highlight.Highlight;
-import com.shi.androidstudy.view.charting.interfaces.datasets.IDataSet;
-import com.shi.androidstudy.view.charting.listener.OnChartValueSelectedListener;
-import com.shi.androidstudy.view.charting.utils.ColorTemplate;
-import com.shi.androidstudy.view.charting.utils.MPPointF;
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.interfaces.datasets.IDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.MPPointF;
 
 import java.util.ArrayList;
 
