@@ -1,2 +1,2 @@
-include ':MVC', ':Sqlite', ':Sqlite-DbFlow', ':OkHttp', ':Retrofit', ':RxJava', ':MVP', ':RxJava+Retrofit', ':MultisTreeView', ':ViewPager', ':Dagger2', ':Sqlite-GreenDao', ':Tool', ':SearchView', ':微信登录', ':扫描二维码', ':数字键盘', ':Statebar沉浸状态栏', ':ClearEditText', ':SelectPicture'
+include ':MVC', ':Sqlite', ':Sqlite-DbFlow', ':OkHttp', ':Retrofit', ':RxJava', ':MVP', ':RxJava+Retrofit', ':MultisTreeView', ':ViewPager', ':Dagger2', ':Sqlite-GreenDao', ':Tool', ':SearchView', ':微信登录', ':扫描二维码', ':数字键盘', ':Statebar沉浸状态栏', ':ClearEditText', ':SelectPicture', ':OpenCameraAndPicture'
 include ':优酷菜单','MPAndroidChartDemo'

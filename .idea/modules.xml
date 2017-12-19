@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/MVP/MVP.iml" filepath="$PROJECT_DIR$/MVP/MVP.iml" />
       <module fileurl="file://$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" filepath="$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" />
       <module fileurl="file://$PROJECT_DIR$/OkHttp/OkHttp.iml" filepath="$PROJECT_DIR$/OkHttp/OkHttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCameraAndPicture/OpenCameraAndPicture.iml" filepath="$PROJECT_DIR$/OpenCameraAndPicture/OpenCameraAndPicture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Retrofit/Retrofit.iml" filepath="$PROJECT_DIR$/Retrofit/Retrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJava/RxJava.iml" filepath="$PROJECT_DIR$/RxJava/RxJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJava+Retrofit/RxJava+Retrofit.iml" filepath="$PROJECT_DIR$/RxJava+Retrofit/RxJava+Retrofit.iml" />

@@ -1,5 +1,6 @@
 package com.afinalstone.androidstudy.dagger2.demo01;
 
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,7 +10,6 @@ import com.afinalstone.androidstudy.dagger2.demo01.ActivityModule;
 import com.afinalstone.androidstudy.dagger2.demo01.DaggerActivityComponent;
 import com.afinalstone.androidstudy.dagger2.demo01.DaggerPresenter;
 
-import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 public class DaggerActivity extends AppCompatActivity {

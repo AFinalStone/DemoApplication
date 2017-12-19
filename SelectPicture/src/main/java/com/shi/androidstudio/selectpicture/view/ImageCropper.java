@@ -98,7 +98,7 @@ public class ImageCropper extends FrameLayout implements GestureDetector.OnGestu
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(sourceFilePath, options);
-        options.inSampleSize = Utils.calculateInSampleSize(options, mWidth, mHeight);
+        options.inSampleSize = ImageCropperHelp.calculateInSampleSize(options, mWidth, mHeight);
         options.inJustDecodeBounds = false;
         bmpSource = BitmapFactory.decodeFile(sourceFilePath, options);
 

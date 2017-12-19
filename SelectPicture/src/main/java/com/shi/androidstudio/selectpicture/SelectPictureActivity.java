@@ -9,12 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.shi.androidstudio.selectpicture.view.ImageCropper;
-import com.shi.androidstudio.selectpicture.view.Utils;
+import com.shi.androidstudio.selectpicture.view.ImageCropperHelp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +27,7 @@ public class SelectPictureActivity extends AppCompatActivity {
     ImageView imageView;
     AdapterListView adapterListView;
     ImageCropper mImageCropper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,14 +88,14 @@ public class SelectPictureActivity extends AppCompatActivity {
     private void initImageCropperWithTitle() {
         mImageCropper = ImageCropper.Helper.with(this)
                 .setTitle("剪切图片")
-                .setTranslucentStatusHeight(Utils.calcStatusBarHeight(this))
+                .setTranslucentStatusHeight(ImageCropperHelp.calcStatusBarHeight(this))
                 .setCallback(new ImageCropper.Callback() {
                     @Override
                     public void onPictureCropOut(Bitmap bitmap, String tag) {
                         imageView.setImageBitmap(bitmap);
                         try {
                              // 保存图片到本地，记得申请权限
-                            Utils.saveBitmapToTargetFile(Utils.getDiskCacheDir(SelectPictureActivity.this,"header"),bitmap);
+                            ImageCropperHelp.saveBitmapToTargetFile(ImageCropperHelp.getDiskCacheDir(SelectPictureActivity.this,"header"),bitmap);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -120,10 +120,14 @@ public class SelectPictureActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else if (requestCode == PhotoPicker.REQUEST_CODE+1) {
+            }
+
+            else if (requestCode == PhotoPicker.REQUEST_CODE+1) {
                 ArrayList<String> photos = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
                 mImageCropper.crop(photos.get(0),imageView.getWidth(),imageView.getHeight(),false,"");
-            }   else if (requestCode == PhotoPicker.REQUEST_CODE+2) {
+            }
+
+            else if (requestCode == PhotoPicker.REQUEST_CODE+2) {
                 ArrayList<String> photos = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
                 listImageUrl.clear();
                 listImageUrl.addAll(photos);
@@ -160,5 +164,7 @@ public class SelectPictureActivity extends AppCompatActivity {
             return imageView;
         }
     }
+
+
 
 }

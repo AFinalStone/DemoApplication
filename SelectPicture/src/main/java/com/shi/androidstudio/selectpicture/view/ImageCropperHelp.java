@@ -8,7 +8,7 @@ import android.os.Environment;
 import java.io.File;
 import java.io.FileOutputStream;
 
-public class Utils {
+public class ImageCropperHelp {
 
     public static int calcStatusBarHeight(Context context) {
         int statusHeight = -1;
