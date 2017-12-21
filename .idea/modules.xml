@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/RxJava/RxJava.iml" filepath="$PROJECT_DIR$/RxJava/RxJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJava+Retrofit/RxJava+Retrofit.iml" filepath="$PROJECT_DIR$/RxJava+Retrofit/RxJava+Retrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/SearchView/SearchView.iml" filepath="$PROJECT_DIR$/SearchView/SearchView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SelectCityView/SelectCityView.iml" filepath="$PROJECT_DIR$/SelectCityView/SelectCityView.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectPicture/SelectPicture.iml" filepath="$PROJECT_DIR$/SelectPicture/SelectPicture.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite/Sqlite.iml" filepath="$PROJECT_DIR$/Sqlite/Sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" filepath="$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" />

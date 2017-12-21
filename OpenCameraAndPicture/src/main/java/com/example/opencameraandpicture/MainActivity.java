@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -148,17 +149,14 @@ public class MainActivity extends AppCompatActivity {
             switch (requestCode) {
                 //拍照完成回调
                 case CODE_CAMERA_REQUEST:
-                    imageUri = Uri.fromFile(fileUri);
-                    Bitmap bitmap = PhotoUtils.getBitmapFromUri(imageUri, this);
+                    String path = fileUri.getAbsolutePath();
+                    Bitmap bitmap = BitmapFactory.decodeFile(path);
                     iv_photo.setImageBitmap(bitmap);
                     break;
                 //访问相册完成回调
                 case CODE_GALLERY_REQUEST:
-                    Uri newUri = Uri.parse(PhotoUtils.getPath(this, data.getData()));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        newUri = FileProvider.getUriForFile(this, "com.opencameraandpicture.fileprovider", new File(newUri.getPath()));
-                    }
-                    bitmap = PhotoUtils.getBitmapFromUri(newUri, this);
+                     path = PhotoUtils.getPath(this, data.getData());
+                     bitmap = BitmapFactory.decodeFile(path);
                     iv_photo.setImageBitmap(bitmap);
                     break;
                 default:

@@ -50,7 +50,7 @@ public class SelectPictureActivity extends AppCompatActivity {
 
                 PhotoPicker.builder()
                         .setPhotoCount(1)
-                        .setShowCamera(true)
+                        .setShowCamera(false)
                         .setShowGif(true)
                         .setPreviewEnabled(true)
                         .start(SelectPictureActivity.this, PhotoPicker.REQUEST_CODE);
@@ -113,7 +113,6 @@ public class SelectPictureActivity extends AppCompatActivity {
 
                 ArrayList<String> photos = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
                 Log.e("图片地址", photos.get(0));
-                mImageCropper.crop(photos.get(0),imageView.getWidth(),imageView.getHeight(),false,"");
                 try {
                     Uri url = Uri.parse(photos.get(0));
                     imageView.setImageURI(url);

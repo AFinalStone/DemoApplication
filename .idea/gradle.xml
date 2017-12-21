@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/RxJava" />
             <option value="$PROJECT_DIR$/RxJava+Retrofit" />
             <option value="$PROJECT_DIR$/SearchView" />
+            <option value="$PROJECT_DIR$/SelectCityView" />
             <option value="$PROJECT_DIR$/SelectPicture" />
             <option value="$PROJECT_DIR$/Sqlite" />
             <option value="$PROJECT_DIR$/Sqlite-DbFlow" />
