@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
                 StateBarUtil.with(MainActivity.this)
                         .barColorTransform(R.color.orange)
                         .navigationBarColorTransform(R.color.tans)
+
 //                        .addViewSupportTransformColor(toolbar)
                         .barAlpha(alpha)
                         .init();

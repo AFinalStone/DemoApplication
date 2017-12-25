@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/SearchView" />
             <option value="$PROJECT_DIR$/SelectCityView" />
             <option value="$PROJECT_DIR$/SelectPicture" />
+            <option value="$PROJECT_DIR$/SnackBarByTop" />
             <option value="$PROJECT_DIR$/Sqlite" />
             <option value="$PROJECT_DIR$/Sqlite-DbFlow" />
             <option value="$PROJECT_DIR$/Sqlite-GreenDao" />

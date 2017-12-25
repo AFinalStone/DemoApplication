@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/SearchView/SearchView.iml" filepath="$PROJECT_DIR$/SearchView/SearchView.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectCityView/SelectCityView.iml" filepath="$PROJECT_DIR$/SelectCityView/SelectCityView.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectPicture/SelectPicture.iml" filepath="$PROJECT_DIR$/SelectPicture/SelectPicture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SnackBarByTop/SnackBarByTop.iml" filepath="$PROJECT_DIR$/SnackBarByTop/SnackBarByTop.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite/Sqlite.iml" filepath="$PROJECT_DIR$/Sqlite/Sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" filepath="$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" filepath="$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" />
