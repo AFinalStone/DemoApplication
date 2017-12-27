@@ -18,7 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/SearchView/SearchView.iml" filepath="$PROJECT_DIR$/SearchView/SearchView.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectCityView/SelectCityView.iml" filepath="$PROJECT_DIR$/SelectCityView/SelectCityView.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectPicture/SelectPicture.iml" filepath="$PROJECT_DIR$/SelectPicture/SelectPicture.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SnackBarByTop/SnackBarByTop.iml" filepath="$PROJECT_DIR$/SnackBarByTop/SnackBarByTop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/顶部提示条SneakBer/SnackBarByTop.iml" filepath="$PROJECT_DIR$/顶部提示条SneakBer/SnackBarByTop.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite/Sqlite.iml" filepath="$PROJECT_DIR$/Sqlite/Sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" filepath="$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" filepath="$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" />
@@ -29,6 +29,7 @@
       <module fileurl="file://$PROJECT_DIR$/微信登录/微信登录.iml" filepath="$PROJECT_DIR$/微信登录/微信登录.iml" />
       <module fileurl="file://$PROJECT_DIR$/扫描二维码/扫描二维码.iml" filepath="$PROJECT_DIR$/扫描二维码/扫描二维码.iml" />
       <module fileurl="file://$PROJECT_DIR$/数字键盘/数字键盘.iml" filepath="$PROJECT_DIR$/数字键盘/数字键盘.iml" />
+      <module fileurl="file://$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" filepath="$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" />
     </modules>
   </component>
 </project>

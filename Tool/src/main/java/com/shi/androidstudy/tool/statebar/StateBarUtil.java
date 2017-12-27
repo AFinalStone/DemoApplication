@@ -846,6 +846,18 @@ public class StateBarUtil {
         return this;
     }
 
+
+    /**
+     * 判断颜色所属风格是否为暗色风格
+     */
+    public static boolean isDarkColorTheme(int styleColor) {
+        int r = Color.red(styleColor);
+        int g = Color.green(styleColor);
+        int b = Color.blue(styleColor);
+        float grayLevel = r * 0.299f + g * 0.587f + b * 0.114f;
+        return grayLevel < 192; // default -> 192
+    }
+
     /**
      * 隐藏导航栏或状态栏
      *

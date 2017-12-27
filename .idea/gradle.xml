@@ -22,7 +22,6 @@
             <option value="$PROJECT_DIR$/SearchView" />
             <option value="$PROJECT_DIR$/SelectCityView" />
             <option value="$PROJECT_DIR$/SelectPicture" />
-            <option value="$PROJECT_DIR$/SnackBarByTop" />
             <option value="$PROJECT_DIR$/Sqlite" />
             <option value="$PROJECT_DIR$/Sqlite-DbFlow" />
             <option value="$PROJECT_DIR$/Sqlite-GreenDao" />
@@ -33,6 +32,7 @@
             <option value="$PROJECT_DIR$/微信登录" />
             <option value="$PROJECT_DIR$/扫描二维码" />
             <option value="$PROJECT_DIR$/数字键盘" />
+            <option value="$PROJECT_DIR$/顶部提示条SneakBer" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
