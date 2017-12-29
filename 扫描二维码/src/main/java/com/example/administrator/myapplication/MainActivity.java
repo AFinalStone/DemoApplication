@@ -19,12 +19,7 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.ScaleAnimation;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.administrator.myapplication.scaner.CameraManager;
@@ -37,7 +32,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static OnRxScanerListener mScanerListener;//扫描结果监听
     private InactivityTimer inactivityTimer;
     private CaptureActivityHandler handler;//扫描处理
     private View mCaptureRoot = null;//跟布局
@@ -45,17 +39,16 @@ public class MainActivity extends AppCompatActivity {
     private View mCropLayout = null;//扫描框根布局
     private View linearLayout_pauseTip = null;//扫描框根布局
     private SurfaceView surfaceView;
-    private int mCropWidth = 0;//扫描边界的宽度
-    private int mCropHeight = 0;//扫描边界的高度
+//    private int mCropWidth = 0;//扫描边界的宽度
+//    private int mCropHeight = 0;//扫描边界的高度
     private boolean hasSurface = false;//是否有预览
     private boolean vibrate = true;//扫描成功后是否震动
     private boolean mFlashing = true;//闪光灯开启状态
-    //private LinearLayout mLlScanHelp;//生成二维码 & 条形码 布局
-    //private ImageView mIvLight;//闪光灯 按钮
     private Activity mContext;
     ObjectAnimator objAnim;
 
-    public static final int GET_IMAGE_FROM_ALBUM =  1;
+
+    public static final int GET_IMAGE_FROM_ALBUM = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,17 +66,6 @@ public class MainActivity extends AppCompatActivity {
         mCaptureScanLine = findViewById(R.id.capture_scan_line);
         surfaceView = (SurfaceView) findViewById(R.id.capture_preview);
         linearLayout_pauseTip = findViewById(R.id.linearLayout_pauseTip);
-        mScanerListener = new OnRxScanerListener() {
-            @Override
-            public void onSuccess(String type, Result result) {
-                showMsg(type + "----扫描成功：" + result.getText());
-            }
-
-            @Override
-            public void onFail(String type, String message) {
-                showMsg(type + "----扫描失败：" + message);
-            }
-        };
         //请求Camera权限 与 文件读写 权限
         if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -92,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+   protected void onResume() {
         super.onResume();
-        CameraStart();
-        ScaleStart();//扫描动画初始化
+        CameraPlay();
+        ScalePlay();//扫描动画初始化
     }
 
     @Override
@@ -108,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         inactivityTimer.shutdown();
-        mScanerListener = null;
+//        mScanerListener = null;
         super.onDestroy();
     }
 
 
-    public void ScaleStart() {
+    public void ScalePlay() {
         if (objAnim == null) {
             objAnim = ObjectAnimator.ofFloat(mCaptureScanLine, "translationY", 0f, DisplayUtil.dip2px(this, 219), 0f);
             objAnim.setInterpolator(new LinearInterpolator());
@@ -130,11 +112,12 @@ public class MainActivity extends AppCompatActivity {
         objAnim.cancel();
         mCaptureScanLine.setVisibility(View.INVISIBLE);
         linearLayout_pauseTip.setVisibility(View.VISIBLE);
+        surfaceView.setVisibility(View.VISIBLE);
     }
 
 
-    public void CameraStart() {
-        surfaceView.setVisibility(View.VISIBLE);
+    public void CameraPlay() {
+
         SurfaceHolder surfaceHolder = surfaceView.getHolder();
         if (hasSurface) {
             initCamera(surfaceHolder);//Camera初始化
@@ -168,27 +151,7 @@ public class MainActivity extends AppCompatActivity {
             handler = null;
         }
         CameraManager.get().closeDriver();
-        surfaceView.setVisibility(View.INVISIBLE);
-    }
 
-//    public int getCropWidth() {
-//        return mCropWidth;
-//    }
-//
-//    public int getCropHeight() {
-//        return mCropHeight;
-//    }
-
-    public void setCropWidth(int cropWidth) {
-        mCropWidth = cropWidth;
-        CameraManager.FRAME_WIDTH = mCropWidth;
-
-    }
-
-
-    public void setCropHeight(int cropHeight) {
-        this.mCropHeight = cropHeight;
-        CameraManager.FRAME_HEIGHT = mCropHeight;
     }
 
     public void onClick(View view) {
@@ -208,8 +171,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.linearLayout_pauseTip:
             case R.id.tv_restart:
-                ScaleStart();
-                CameraStart();
+                ScalePlay();
+                CameraPlay();
                 break;
         }
 
@@ -219,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         //请求Camera权限 与 文件读写 权限
         if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(mContext, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-        }else{
+        } else {
             Intent intent = new Intent();
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -248,8 +211,8 @@ public class MainActivity extends AppCompatActivity {
             AtomicInteger height = new AtomicInteger(point.x);
             int cropWidth = mCropLayout.getWidth() * width.get() / mCaptureRoot.getWidth();
             int cropHeight = mCropLayout.getHeight() * height.get() / mCaptureRoot.getHeight();
-            setCropWidth(cropWidth);
-            setCropHeight(cropHeight);
+            CameraManager.FRAME_WIDTH = cropWidth;
+            CameraManager.FRAME_HEIGHT = cropHeight;
         } catch (IOException | RuntimeException ioe) {
             return;
         }
@@ -274,78 +237,23 @@ public class MainActivity extends AppCompatActivity {
                 // 开始对图像资源解码
                 Result rawResult = QrCodeTool.decodeFromPhoto(photo);
                 if (rawResult != null) {
-                    if (mScanerListener == null) {
-//                        initDialogResult(rawResult);
-                    } else {
-                        mScanerListener.onSuccess("From to Picture", rawResult);
-                    }
+                    showMsg("----扫描成功：" + rawResult.getText());
                 } else {
-                    if (mScanerListener == null) {
-//                        RxToast.error("图片识别失败.");
-                        showMsg("图片识别失败");
-                    } else {
-                        mScanerListener.onFail("From to Picture", "图片识别失败");
-                    }
+                    showMsg("----扫描失败：");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
-    //==============================================================================================解析结果 及 后续处理 end
 
-//    private void initDialogResult(Result result) {
-//        BarcodeFormat type = result.getBarcodeFormat();
-//        String realContent = result.getText();
-//
-//        if (rxDialogSure == null) {
-//            rxDialogSure = new RxDialogSure(mContext);//提示弹窗
-//        }
-//
-//        if (BarcodeFormat.QR_CODE.equals(type)) {
-//            rxDialogSure.setTitle("二维码扫描结果");
-//        } else if (BarcodeFormat.EAN_13.equals(type)) {
-//            rxDialogSure.setTitle("条形码扫描结果");
-//        } else {
-//            rxDialogSure.setTitle("扫描结果");
-//        }
-//
-//        rxDialogSure.setContent(realContent);
-//        rxDialogSure.setSureListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                rxDialogSure.cancel();
-//            }
-//        });
-//        rxDialogSure.setOnCancelListener(new DialogInterface.OnCancelListener() {
-//            @Override
-//            public void onCancel(DialogInterface dialog) {
-//                if (handler != null) {
-//                    // 连续扫描，不发送此消息扫描一次结束后就不能再次扫描
-//                    handler.sendEmptyMessage(R.id.restart_preview);
-//                }
-//            }
-//        });
-//
-//        if (!rxDialogSure.isShowing()) {
-//            rxDialogSure.show();
-//        }
-//
-//        RxSPTool.putContent(mContext, RxConstants.SP_SCAN_CODE, RxDataTool.stringToInt(RxSPTool.getContent(mContext, RxConstants.SP_SCAN_CODE)) + 1 + "");
-//    }
 
     public void handleDecode(Result result) {
         inactivityTimer.onActivity();
         PlayBeepTool.playBeep(mContext, vibrate);//扫描成功之后的振动与声音提示
         String result1 = result.getText();
         Log.v("二维码/条形码 扫描结果", result1);
-        if (mScanerListener == null) {
-//            RxToast.success(result1);
-//            initDialogResult(result);
-            showMsg(result1);
-        } else {
-            mScanerListener.onSuccess("From to Camera", result);
-        }
+        showMsg(result1);
     }
 
     public Handler getHandler() {

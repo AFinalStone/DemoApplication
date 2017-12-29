@@ -24,7 +24,7 @@
         android:layout_height="219dp"
         android:layout_below="@id/top_mask"
         android:layout_centerHorizontal="true"
-        android:background="@mipmap/background_croplayout"
+        android:background="@mipmap/background_sweep_root"
         android:contentDescription="@string/app_name">
 
         <View
