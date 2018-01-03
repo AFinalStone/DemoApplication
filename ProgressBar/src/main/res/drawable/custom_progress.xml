@@ -12,10 +12,7 @@
         <clip><!--可裁剪对象-->
             <shape android:shape="rectangle">
                 <corners android:radius="5dp" />
-                <gradient
-                    android:angle="45"
-                    android:endColor="#f90"
-                    android:startColor="#f00" />
+                <solid android:color="@android:color/black" />
             </shape>
         </clip>
     </item>
