@@ -1,7 +1,39 @@
 
 ### 常用工具类：
 
-- **ActivityCollectorUtil工具类：** Activity管理工具类，每次开启新的Activity都先添加进入当前集合中，退出程序时结束集合中所有Activity。
+#### [SmoothCheckBox](https://github.com/andyxialm/SmoothCheckBox)
+
+![SmoothCheckBox](pic/smoothcb.gif)
+
+#### Attrs 属性
+```
+attr	format	description
+duration	integer	动画持续时间
+stroke_width	dimension	未选中时边框宽度
+color_tick	color	对勾颜色
+color_checked	color	选中时填充颜色
+color_unchecked	color	未选中时填充颜色
+color_unchecked_stroke	color	未选中时边框颜色
+
+```
+#### Usage 使用
+```java
+
+    setChecked(boolean checked);                   // 默认不带动画，若需要动画 调用重载方法
+    setChecked(boolean checked, boolean animate);  // 参数: animate 是否显示动画
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sample);
+
+        final SmoothCheckBox scb = (SmoothCheckBox) findViewById(R.id.scb);
+        scb.setOnCheckedChangeListener(new SmoothCheckBox.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(SmoothCheckBox checkBox, boolean isChecked) {
+                Log.d("SmoothCheckBox", String.valueOf(isChecked));
+            }
+        });
+    }
+```
 
 - **CreateQRImageUtil工具类：** 把字符串转换成二维码图片的工具类
 

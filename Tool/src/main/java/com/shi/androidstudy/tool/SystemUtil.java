@@ -1,5 +1,6 @@
 package com.shi.androidstudy.tool;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
@@ -47,6 +48,25 @@ public class SystemUtil {
         } else {
             return 0;
         }
+    }
+
+    /**
+     * 获取当前是否安装某个app
+     **/
+    public static boolean isExistsPackageApp(Context mContext,String packageName) {
+        final PackageManager packageManager = mContext.getPackageManager();
+        // 获取packagemanager
+        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);
+        // 获取所有已安装程序的包信息
+        if (pinfo != null) {
+            for (int i = 0; i < pinfo.size(); i++) {
+                String pn = pinfo.get(i).packageName;
+                if (pn.equals(packageName)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**
@@ -254,7 +274,7 @@ public class SystemUtil {
     public static String getIMIEStatus(Context context) {
         TelephonyManager tm = (TelephonyManager) context
                 .getSystemService(Context.TELEPHONY_SERVICE);
-        String deviceId = tm.getDeviceId();
+        @SuppressLint("MissingPermission") String deviceId = tm.getDeviceId();
         return deviceId;
     }
 

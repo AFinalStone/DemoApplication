@@ -117,38 +117,38 @@ public class IOSAlertDialog extends Dialog {
             final IOSAlertDialog dialog = new IOSAlertDialog(mContext, R.style.AlertDialogStyle);
             // 获取Dialog布局
             View layout = LayoutInflater.from(mContext).inflate(
-                    R.layout.view_ios_alertdialog, null);
+                    R.layout.view_ios_dialog, null);
             LinearLayout lLayout_bg = (LinearLayout) layout.findViewById(R.id.lLayout_bg);
 
             if (mTitle != null) {
+                layout.findViewById(R.id.txt_title).setVisibility(View.VISIBLE);
                 ((TextView) layout.findViewById(R.id.txt_title)).setText(mTitle);
             }
             if (mMessage != null) {
+                layout.findViewById(R.id.txt_msg).setVisibility(View.VISIBLE);
                 ((TextView) layout.findViewById(R.id.txt_msg)).setText(mMessage);
             }
             if (mPositiveButtonText != null) {
+                layout.findViewById(R.id.btn_pos).setVisibility(View.VISIBLE);
                 ((TextView) layout.findViewById(R.id.btn_pos)).setText(mPositiveButtonText);
                 if (mPositiveButtonClickListener != null) {
-                    ((TextView) layout.findViewById(R.id.btn_pos)).setOnClickListener(new View.OnClickListener() {
+                    layout.findViewById(R.id.btn_pos).setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             mPositiveButtonClickListener.onClick(dialog, DialogInterface.BUTTON_POSITIVE);
                         }
                     });
                 }
-            } else {
-                layout.findViewById(R.id.btn_pos).setVisibility(View.GONE);
             }
             if (mNegativeButtonText != null) {
+                layout.findViewById(R.id.btn_neg).setVisibility(View.VISIBLE);
                 ((TextView) layout.findViewById(R.id.btn_neg)).setText(mNegativeButtonText);
                 if (mNegativeButtonClickListener != null) {
-                    ((TextView) layout.findViewById(R.id.btn_neg)).setOnClickListener(new View.OnClickListener() {
+                    (layout.findViewById(R.id.btn_neg)).setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             mNegativeButtonClickListener.onClick(dialog, DialogInterface.BUTTON_NEGATIVE);
                         }
                     });
                 }
-            } else {
-                layout.findViewById(R.id.btn_neg).setVisibility(View.GONE);
             }
             dialog.setCancelable(flagCancelable);
             dialog.setContentView(layout);
@@ -156,7 +156,7 @@ public class IOSAlertDialog extends Dialog {
             WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
             Display display = windowManager.getDefaultDisplay();
             lLayout_bg.setLayoutParams(new FrameLayout.LayoutParams((int) (display
-                    .getWidth()*0.85 ), LinearLayout.LayoutParams.WRAP_CONTENT));
+                    .getWidth()*0.8 ), LinearLayout.LayoutParams.WRAP_CONTENT));
             return dialog;
         }
 

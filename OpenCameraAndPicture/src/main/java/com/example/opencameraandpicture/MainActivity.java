@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iv_photo = findViewById(R.id.iv_photo);
+        iv_photo = (ImageView) findViewById(R.id.iv_photo);
     }
 
 

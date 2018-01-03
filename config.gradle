@@ -1,8 +1,8 @@
 ext {
 
     android = [
-            compileSdkVersion: 25,
-            buildToolsVersion: '25.0.2',
+            compileSdkVersion: 26,
+            buildToolsVersion: '26.0.2',
             applicationId    : "com.example.administrator.hmreceipt",
             minSdkVersion    : 19,
             targetSdkVersion : 25,
@@ -69,7 +69,7 @@ ext {
             "signature-pad"              : "com.github.gcacace:signature-pad:1.2.1",
             "fragmentation"              : "me.yokeyword:fragmentation:0.10.4",
             "crashreport"                : "com.tencent.bugly:crashreport:latest.release",
-            "nineoldandroids"                : "com.nineoldandroids:library:2.4.0",
+            "nineoldandroids"            : "com.nineoldandroids:library:2.4.0",
             "picture-selector"           : 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.7',
 
             //canary

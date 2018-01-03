@@ -12,11 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.shi.androidstudy.tool.R;
+import com.shi.androidstudy.widget.SmoothCheckBox.SmoothCheckBox;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,15 +32,15 @@ import java.util.List;
 
 public class IOSActionSheetDialog extends Dialog {
 
-    public IOSActionSheetDialog(@NonNull Context context) {
+    private IOSActionSheetDialog(@NonNull Context context) {
         super(context);
     }
 
-    public IOSActionSheetDialog(@NonNull Context context, @StyleRes int themeResId) {
+    private IOSActionSheetDialog(@NonNull Context context, @StyleRes int themeResId) {
         super(context, themeResId);
     }
 
-    protected IOSActionSheetDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
+    private IOSActionSheetDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
     }
 
@@ -46,8 +48,10 @@ public class IOSActionSheetDialog extends Dialog {
 
         private Context context;
         private String strTitle;
+        private int cancelTextColor;
+        private int titleTextColor;
         private boolean showTitle = false;
-        private List<SheetItem> sheetItemList;
+        private List<IOSActionSheetItem> IOSActionSheetItemList;
         private boolean flagCancelable = true;
         private boolean flagCanceledOnTouchOutside = true;
         Display mDisplay;
@@ -64,6 +68,18 @@ public class IOSActionSheetDialog extends Dialog {
             return this;
         }
 
+        public Builder setTitleTextColor(int titleTextColor) {
+            this.titleTextColor = titleTextColor;
+            return this;
+        }
+
+
+        public Builder setCancelTextColor(int cancelTextColor) {
+            this.cancelTextColor = cancelTextColor;
+            return this;
+        }
+
+
         public Builder setCancelable(boolean cancel) {
             flagCancelable = cancel;
             return this;
@@ -74,18 +90,12 @@ public class IOSActionSheetDialog extends Dialog {
             return this;
         }
 
-        /**
-         * @param strItem  条目名称
-         * @param color    条目字体颜色，设置null则默认蓝色
-         * @param listener
-         * @return
-         */
-        public Builder addSheetItem(String strItem, SheetItemColor color,
-                                    OnSheetItemClickListener listener) {
-            if (sheetItemList == null) {
-                sheetItemList = new ArrayList<SheetItem>();
+
+        public Builder addSheetItem(IOSActionSheetItem IOSActionSheetItem) {
+            if (IOSActionSheetItemList == null) {
+                IOSActionSheetItemList = new ArrayList<>();
             }
-            sheetItemList.add(new SheetItem(strItem, color, listener));
+            IOSActionSheetItemList.add(IOSActionSheetItem);
             return this;
         }
 
@@ -105,20 +115,29 @@ public class IOSActionSheetDialog extends Dialog {
             View view = LayoutInflater.from(context).inflate(R.layout.view_ios_actionsheet, null);
             // 获取自定义Dialog布局中的控件
             ScrollView sLayout_content = (ScrollView) view.findViewById(R.id.sLayout_content);
-            LinearLayout lLayout_content = (LinearLayout) view
-                    .findViewById(R.id.lLayout_content);
-//            TextView txt_title = (TextView) widget.findViewById(R.id.txt_title);
+            LinearLayout lLayout_content = (LinearLayout) view.findViewById(R.id.lLayout_content);
+            //初始化title
             if (strTitle != null) {
                 TextView txt_title = (TextView) view.findViewById(R.id.txt_title);
                 txt_title.setVisibility(View.VISIBLE);
                 txt_title.setText(strTitle);
+                if (titleTextColor == 0) {
+                    cancelTextColor = context.getResources().getColor(R.color.iosActionSheet_blue);
+                }
+                txt_title.setTextColor(titleTextColor);
             }
-            view.findViewById(R.id.txt_cancel).setOnClickListener(new View.OnClickListener() {
+            //初始化取消
+            TextView txtCancel = (TextView) view.findViewById(R.id.txt_cancel);
+            txtCancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mDialog.dismiss();
                 }
             });
+            if (cancelTextColor == 0) {
+                cancelTextColor = context.getResources().getColor(R.color.iosActionSheet_blue);
+            }
+            txtCancel.setTextColor(cancelTextColor);
             // 定义Dialog布局和参数
             mDialog.setContentView(view);
             Window dialogWindow = mDialog.getWindow();
@@ -132,6 +151,7 @@ public class IOSActionSheetDialog extends Dialog {
             mDisplay = windowManager.getDefaultDisplay();
             // 设置Dialog最小宽度为屏幕宽度
             view.setMinimumWidth(mDisplay.getWidth());
+            //初始化SheetItems
             setSheetItems(sLayout_content, lLayout_content);
 
             mDialog.setCancelable(flagCancelable);
@@ -143,11 +163,11 @@ public class IOSActionSheetDialog extends Dialog {
          * 设置条目布局
          */
         private void setSheetItems(ScrollView sLayout_content, LinearLayout lLayout_content) {
-            if (sheetItemList == null || sheetItemList.size() <= 0) {
+            if (IOSActionSheetItemList == null || IOSActionSheetItemList.size() <= 0) {
                 return;
             }
 
-            int size = sheetItemList.size();
+            final int size = IOSActionSheetItemList.size();
 
             //高度控制，非最佳解决办法
             // 添加条目过多的时候控制高度
@@ -161,100 +181,66 @@ public class IOSActionSheetDialog extends Dialog {
             // 循环添加条目
             for (int i = 1; i <= size; i++) {
                 final int index = i;
-                SheetItem sheetItem = sheetItemList.get(i - 1);
-                String strItem = sheetItem.name;
-                SheetItemColor color = sheetItem.color;
-                final OnSheetItemClickListener listener = sheetItem.itemClickListener;
+                IOSActionSheetItem IOSActionSheetItem = IOSActionSheetItemList.get(i - 1);
+                String strItem = IOSActionSheetItem.name;
+                IOSActionSheetItem.SheetItemColor color = IOSActionSheetItem.itemColor;
+                IOSActionSheetItem.SheetItemColor checkColor = IOSActionSheetItem.checkColor;
+                int resIconID = IOSActionSheetItem.itemIcon;
+                View.OnClickListener listener = IOSActionSheetItem.itemClickListener;
 
-                TextView textView = new TextView(context);
-                textView.setText(strItem);
-                textView.setTextSize(18);
-                textView.setGravity(Gravity.CENTER);
+                View itemView = LayoutInflater.from(context).inflate(R.layout.view_ios_actionsheet_item, null, false);
+                ImageView itemIcon = (ImageView) itemView.findViewById(R.id.itemIcon);
+                TextView itemText = (TextView) itemView.findViewById(R.id.itemText);
+                IOSActionSheetItem.smoothCheckBox = (SmoothCheckBox) itemView.findViewById(R.id.itemCheck);
 
+                if (color == null) {
+                    color = com.shi.androidstudy.widget.dialog.IOSActionSheetItem.SheetItemColor.Blue;
+                }
+                if (checkColor == null) {
+                    checkColor = com.shi.androidstudy.widget.dialog.IOSActionSheetItem.SheetItemColor.Blue;
+                }
+                //初始化条目TextView
+                itemText.setText(strItem);
+                itemText.setTextColor(Color.parseColor(color.getName()));
+                //初始化icon
+                if (resIconID != 0) {
+                    itemIcon.setImageResource(resIconID);
+                }
+                //checkBox点击监听者
+                if (IOSActionSheetItem.OnCheckedChangeListener != null) {
+                    IOSActionSheetItem.smoothCheckBox.setCheckedColor(Color.parseColor(checkColor.getName()));
+                    IOSActionSheetItem.smoothCheckBox.setVisibility(View.VISIBLE);
+                    IOSActionSheetItem.smoothCheckBox.setOnCheckedChangeListener(IOSActionSheetItem.OnCheckedChangeListener);
+                }
+                // 点击事件
+                if (listener != null)
+                    itemView.setOnClickListener(listener);
                 // 背景图片
                 if (size == 1) {
                     if (showTitle) {
-                        textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                        itemView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
                     } else {
-                        textView.setBackgroundResource(R.drawable.actionsheet_single_selector);
+                        itemView.setBackgroundResource(R.drawable.actionsheet_single_selector);
                     }
                 } else {
                     if (showTitle) {
                         if (i >= 1 && i < size) {
-                            textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
+                            itemView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
                         } else {
-                            textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                            itemView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
                         }
                     } else {
                         if (i == 1) {
-                            textView.setBackgroundResource(R.drawable.actionsheet_top_selector);
+                            itemView.setBackgroundResource(R.drawable.actionsheet_top_selector);
                         } else if (i < size) {
-                            textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
+                            itemView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
                         } else {
-                            textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                            itemView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
                         }
                     }
                 }
 
-                // 字体颜色
-                if (color == null) {
-                    textView.setTextColor(Color.parseColor(SheetItemColor.Blue
-                            .getName()));
-                } else {
-                    textView.setTextColor(Color.parseColor(color.getName()));
-                }
-
-                // 高度
-                float scale = context.getResources().getDisplayMetrics().density;
-                int height = (int) (45 * scale + 0.5f);
-                textView.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT, height));
-
-                // 点击事件
-                textView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        listener.onClick(index);
-                        mDialog.dismiss();
-                    }
-                });
-
-                lLayout_content.addView(textView);
-            }
-        }
-
-        public class SheetItem {
-            String name;
-            OnSheetItemClickListener itemClickListener;
-            SheetItemColor color;
-
-            public SheetItem(String name, SheetItemColor color,
-                             OnSheetItemClickListener itemClickListener) {
-                this.name = name;
-                this.color = color;
-                this.itemClickListener = itemClickListener;
-            }
-        }
-
-        public interface OnSheetItemClickListener {
-            void onClick(int which);
-        }
-
-        public enum SheetItemColor {
-            Blue("#037BFF"), Red("#FD4A2E");
-
-            private String name;
-
-            private SheetItemColor(String name) {
-                this.name = name;
-            }
-
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
+                lLayout_content.addView(itemView);
             }
         }
 

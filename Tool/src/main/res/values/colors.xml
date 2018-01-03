@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--水波纹颜色-->
-    <color name="colorRipple">#FFD7D7D7</color>
-    <color name="colorWhite_FFFFFFFF">#FFFFFFFF</color>
-
-    <color name="trans">#00000000</color>
+    <color name="whiteRipple">#FFD7D7D7</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="black">#000000</color>
-    <color name="alertdialog_line">#c6c6c6</color>
-    <color name="actionsheet_blue">#037BFF</color>
-    <color name="actionsheet_red">#FD4A2E</color>
-    <color name="actionsheet_gray">#8F8F8F</color>
-
-    <color name="viewfinder_frame">#ff000000</color>
-    <color name="viewfinder_laser">#ffff0000</color>
-    <color name="viewfinder_mask">#60000000</color>
-    <color name="result_view">#b0000000</color>
-    <color name="possible_result_points">#c0ffff00</color>
-
-    <color name="color_434343">#434343</color>
-    <color name="color_FB9938">#FB9938</color>
+    <color name="transparent">#00000000</color>
+    <color name="iosAlertDialog_line">#c6c6c6</color>
+    <color name="iosActionSheet_blue">#037BFF</color>
+    <color name="iosActionSheet_red">#FD4A2E</color>
+    <color name="iosActionSheet_gray">#8F8F8F</color>
 
 </resources>

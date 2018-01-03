@@ -36,7 +36,7 @@ public class LoadingDialog {
      * @param cancelable 对话框是否可以取消
      */
     public  Dialog showDialogForLoading(Activity context, String msg, boolean cancelable) {
-        View view = LayoutInflater.from(context).inflate(R.layout.view_loading_dialog, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_ios_loading_dialog, null);
         TextView loadingText = (TextView)view.findViewById(R.id.tv_loadingMsg);
         loadingText.setText(msg);
 
@@ -49,12 +49,12 @@ public class LoadingDialog {
     }
 
     public Dialog showDialogForLoading(Activity context) {
-        View view = LayoutInflater.from(context).inflate(R.layout.view_loading_dialog, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_ios_loading_dialog, null);
         TextView loadingText = (TextView)view.findViewById(R.id.tv_loadingMsg);
         loadingText.setText("加载中...");
 
         mLoadingDialog = new Dialog(context, R.style.CustomProgressDialog);
-        mLoadingDialog.setCancelable(true);
+        mLoadingDialog.setCancelable(false);
         mLoadingDialog.setCanceledOnTouchOutside(false);
         mLoadingDialog.setContentView(view, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
         mLoadingDialog.show();

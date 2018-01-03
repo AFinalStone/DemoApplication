@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+
 /**
  * Created by SHI on 2016/9/10 15:36
  */
@@ -34,6 +36,10 @@ public class ImagerLoaderUtil {
 
     public void displayMyImage(Uri imageUrl, ImageView imageView) {
         picasso.load(imageUrl).into(imageView);
+    }
+
+    public void displayMyImage(File file, ImageView imageView) {
+        picasso.load(file).into(imageView);
     }
 
     public void displayMyImage(String imageUrl, ImageView imageView, Callback callback) {
