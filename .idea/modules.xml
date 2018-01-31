@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/日历控件/CalculatorInterest.iml" filepath="$PROJECT_DIR$/日历控件/CalculatorInterest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ClearEditText/ClearEditText.iml" filepath="$PROJECT_DIR$/ClearEditText/ClearEditText.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dagger2/Dagger2.iml" filepath="$PROJECT_DIR$/Dagger2/Dagger2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/DemoApplication.iml" filepath="$PROJECT_DIR$/.idea/DemoApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/DemoApplication.iml" filepath="$PROJECT_DIR$/DemoApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" filepath="$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" filepath="$PROJECT_DIR$/MultisTreeView/MultisTreeView.iml" />
       <module fileurl="file://$PROJECT_DIR$/OkHttp/OkHttp.iml" filepath="$PROJECT_DIR$/OkHttp/OkHttp.iml" />
       <module fileurl="file://$PROJECT_DIR$/OpenCameraAndPicture/OpenCameraAndPicture.iml" filepath="$PROJECT_DIR$/OpenCameraAndPicture/OpenCameraAndPicture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PhotoGallery/PhotoGallery.iml" filepath="$PROJECT_DIR$/PhotoGallery/PhotoGallery.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProgressBar/ProgressBar.iml" filepath="$PROJECT_DIR$/ProgressBar/ProgressBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/Retrofit/Retrofit.iml" filepath="$PROJECT_DIR$/Retrofit/Retrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJava/RxJava.iml" filepath="$PROJECT_DIR$/RxJava/RxJava.iml" />
@@ -25,10 +26,13 @@
       <module fileurl="file://$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" filepath="$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" />
       <module fileurl="file://$PROJECT_DIR$/Statebar沉浸状态栏/Statebar沉浸状态栏.iml" filepath="$PROJECT_DIR$/Statebar沉浸状态栏/Statebar沉浸状态栏.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tool/Tool.iml" filepath="$PROJECT_DIR$/Tool/Tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UMengLogin/umenglogin.iml" filepath="$PROJECT_DIR$/UMengLogin/umenglogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UMengShare/UMengShare.iml" filepath="$PROJECT_DIR$/UMengShare/UMengShare.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPager/ViewPager.iml" filepath="$PROJECT_DIR$/ViewPager/ViewPager.iml" />
       <module fileurl="file://$PROJECT_DIR$/微信登录/微信登录.iml" filepath="$PROJECT_DIR$/微信登录/微信登录.iml" />
       <module fileurl="file://$PROJECT_DIR$/扫描二维码/扫描二维码.iml" filepath="$PROJECT_DIR$/扫描二维码/扫描二维码.iml" />
       <module fileurl="file://$PROJECT_DIR$/数字键盘/数字键盘.iml" filepath="$PROJECT_DIR$/数字键盘/数字键盘.iml" />
+      <module fileurl="file://$PROJECT_DIR$/日历控件/日历控件.iml" filepath="$PROJECT_DIR$/日历控件/日历控件.iml" />
       <module fileurl="file://$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" filepath="$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" />
     </modules>
   </component>

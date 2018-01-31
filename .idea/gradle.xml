@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/MultisTreeView" />
             <option value="$PROJECT_DIR$/OkHttp" />
             <option value="$PROJECT_DIR$/OpenCameraAndPicture" />
+            <option value="$PROJECT_DIR$/PhotoGallery" />
             <option value="$PROJECT_DIR$/ProgressBar" />
             <option value="$PROJECT_DIR$/Retrofit" />
             <option value="$PROJECT_DIR$/RxJava" />
@@ -28,10 +29,13 @@
             <option value="$PROJECT_DIR$/Sqlite-GreenDao" />
             <option value="$PROJECT_DIR$/Statebar沉浸状态栏" />
             <option value="$PROJECT_DIR$/Tool" />
+            <option value="$PROJECT_DIR$/UMengLogin" />
+            <option value="$PROJECT_DIR$/UMengShare" />
             <option value="$PROJECT_DIR$/ViewPager" />
             <option value="$PROJECT_DIR$/微信登录" />
             <option value="$PROJECT_DIR$/扫描二维码" />
             <option value="$PROJECT_DIR$/数字键盘" />
+            <option value="$PROJECT_DIR$/日历控件" />
             <option value="$PROJECT_DIR$/顶部提示条SneakBer" />
           </set>
         </option>
