@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.example.umenglogin"
+        applicationId "com.hm.iou"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
@@ -14,6 +14,15 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+    }
+
+    signingConfigs {
+        hmiou {
+            storeFile file('keystore/hmiou.keystore')
+            keyAlias 'iou'
+            keyPassword 'hmswkjiou'
+            storePassword 'hmswkjiou'
+        }
     }
 
     sourceSets.main {
@@ -24,6 +33,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.hmiou
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.hmiou
         }
     }
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hm.bdulocation.MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="开始定位" />
+
+    <TextView
+        android:id="@+id/tv_locationX"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:text="当前的经度x为:" />
+
+    <TextView
+        android:id="@+id/tv_locationY"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:text="当前的纬度y为:" />
+
+</LinearLayout>

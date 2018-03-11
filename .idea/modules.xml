@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BDuLocation/BDuLocation.iml" filepath="$PROJECT_DIR$/BDuLocation/BDuLocation.iml" />
       <module fileurl="file://$PROJECT_DIR$/日历控件/CalculatorInterest.iml" filepath="$PROJECT_DIR$/日历控件/CalculatorInterest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ClearEditText/ClearEditText.iml" filepath="$PROJECT_DIR$/ClearEditText/ClearEditText.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dagger2/Dagger2.iml" filepath="$PROJECT_DIR$/Dagger2/Dagger2.iml" />
       <module fileurl="file://$PROJECT_DIR$/DemoApplication.iml" filepath="$PROJECT_DIR$/DemoApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FragmentTest/FragmentTest.iml" filepath="$PROJECT_DIR$/FragmentTest/FragmentTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" filepath="$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVP/MVP.iml" filepath="$PROJECT_DIR$/MVP/MVP.iml" />
@@ -20,19 +22,22 @@
       <module fileurl="file://$PROJECT_DIR$/SearchView/SearchView.iml" filepath="$PROJECT_DIR$/SearchView/SearchView.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectCityView/SelectCityView.iml" filepath="$PROJECT_DIR$/SelectCityView/SelectCityView.iml" />
       <module fileurl="file://$PROJECT_DIR$/SelectPicture/SelectPicture.iml" filepath="$PROJECT_DIR$/SelectPicture/SelectPicture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShareSDKLogin/ShareSDKLogin.iml" filepath="$PROJECT_DIR$/ShareSDKLogin/ShareSDKLogin.iml" />
       <module fileurl="file://$PROJECT_DIR$/顶部提示条SneakBer/SnackBarByTop.iml" filepath="$PROJECT_DIR$/顶部提示条SneakBer/SnackBarByTop.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite/Sqlite.iml" filepath="$PROJECT_DIR$/Sqlite/Sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" filepath="$PROJECT_DIR$/Sqlite-DbFlow/Sqlite-DbFlow.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" filepath="$PROJECT_DIR$/Sqlite-GreenDao/Sqlite-GreenDao.iml" />
       <module fileurl="file://$PROJECT_DIR$/Statebar沉浸状态栏/Statebar沉浸状态栏.iml" filepath="$PROJECT_DIR$/Statebar沉浸状态栏/Statebar沉浸状态栏.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tool/Tool.iml" filepath="$PROJECT_DIR$/Tool/Tool.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UMengLogin/umenglogin.iml" filepath="$PROJECT_DIR$/UMengLogin/umenglogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UMengLogin/UMengLogin.iml" filepath="$PROJECT_DIR$/UMengLogin/UMengLogin.iml" />
       <module fileurl="file://$PROJECT_DIR$/UMengShare/UMengShare.iml" filepath="$PROJECT_DIR$/UMengShare/UMengShare.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPager/ViewPager.iml" filepath="$PROJECT_DIR$/ViewPager/ViewPager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/微信登录/微信登录.iml" filepath="$PROJECT_DIR$/微信登录/微信登录.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WXLogin/WXLogin.iml" filepath="$PROJECT_DIR$/WXLogin/WXLogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShareSDKLogin/微信登录.iml" filepath="$PROJECT_DIR$/ShareSDKLogin/微信登录.iml" />
       <module fileurl="file://$PROJECT_DIR$/扫描二维码/扫描二维码.iml" filepath="$PROJECT_DIR$/扫描二维码/扫描二维码.iml" />
       <module fileurl="file://$PROJECT_DIR$/数字键盘/数字键盘.iml" filepath="$PROJECT_DIR$/数字键盘/数字键盘.iml" />
       <module fileurl="file://$PROJECT_DIR$/日历控件/日历控件.iml" filepath="$PROJECT_DIR$/日历控件/日历控件.iml" />
+      <module fileurl="file://$PROJECT_DIR$/滚轮选择/滚轮选择.iml" filepath="$PROJECT_DIR$/滚轮选择/滚轮选择.iml" />
       <module fileurl="file://$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" filepath="$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" />
     </modules>
   </component>

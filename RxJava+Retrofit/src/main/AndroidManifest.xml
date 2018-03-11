@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rxjava_retrofit01">
+    package="com.hm.rxjava_retrofit01">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.rxjava_retrofit01.controller.MainActivity">
+        <activity android:name="com.hm.rxjava_retrofit01.controller.MainActivity">
 <!--            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +18,7 @@
             </intent-filter>-->
         </activity>
 
-        <activity android:name="com.example.rxjava_retrofit02.controller.MainActivity">
+        <activity android:name="com.hm.rxjava_retrofit02.controller.MainActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -26,7 +26,7 @@
             <!--</intent-filter>-->
         </activity>
 
-        <activity android:name="com.example.rxjava_retrofit03.controller.MainActivity">
+        <activity android:name="com.hm.rxjava_retrofit03.controller.MainActivity">
 <!--            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,7 @@
             </intent-filter>-->
         </activity>
 
-        <activity android:name="com.example.rxjava_retrofit04.controller.MainActivity">
+        <activity android:name="com.hm.rxjava_retrofit04.controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

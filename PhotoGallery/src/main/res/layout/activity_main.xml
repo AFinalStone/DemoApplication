@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.photogallery.MainActivity">
+    tools:context="com.hm.photogallery.MainActivity">
 
-    <com.example.photogallery.XGallery
+    <com.hm.photogallery.XGallery
         android:id="@+id/xgallery"
         android:layout_width="match_parent"
         android:layout_height="140dp"

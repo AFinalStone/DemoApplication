@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
     android:orientation="vertical"
-    tools:context="com.example.snackbar.MainActivity">
+    tools:context="com.hm.snackbar.MainActivity">
 
     <Button
         android:layout_width="match_parent"
