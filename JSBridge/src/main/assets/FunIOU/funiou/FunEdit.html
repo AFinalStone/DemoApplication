@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/FunEdit.css"/>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>	
+	</head>
+	<body>
+	<div class="maxwidth">	
+		<div class="nav">
+			<span class="back"><a href="javascript:history.go(-1)"></a></span>
+		</div>
+		<div class="iouhead">编辑借条</div>
+		<div class="edit">
+			<label>我是谁:<input type="text" id="borrowerName" placeholder="如穷酸书生"/></label>
+			<label>问谁借:<input type="text" id="loanerName" placeholder="如未来丈母娘"/></label>
+			<label>借什么:<input type="text" id="thinesName" placeholder="如女儿"/></label>
+			<label>用途是:<input type="text" id="todo" placeholder="来年生俩，还丈母娘三人"/></label>
+			<label class="switch_fram">是否提醒:<span>提醒</span><i class="switch on"></i></label>
+			<label class="revert">提醒归还:<input type="date" id="scheduleReturnDate"/></label>
+		</div>
+		<button class="generate" onclick="next()">下一步</button>
+	</div>
+	</body>
+	<script type="text/javascript" src="../js/public.js" ></script>
+	<script src="../js/FunEdit.js" type="text/javascript" charset="utf-8"></script>
+</html>

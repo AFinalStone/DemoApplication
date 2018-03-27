@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/ClearEditText" />
             <option value="$PROJECT_DIR$/Dagger2" />
             <option value="$PROJECT_DIR$/FragmentTest" />
+            <option value="$PROJECT_DIR$/JSBridge" />
             <option value="$PROJECT_DIR$/MPAndroidChartDemo" />
             <option value="$PROJECT_DIR$/MVC" />
             <option value="$PROJECT_DIR$/MVP" />
@@ -38,7 +39,6 @@
             <option value="$PROJECT_DIR$/WXLogin" />
             <option value="$PROJECT_DIR$/扫描二维码" />
             <option value="$PROJECT_DIR$/数字键盘" />
-            <option value="$PROJECT_DIR$/日历控件" />
             <option value="$PROJECT_DIR$/滚轮选择" />
             <option value="$PROJECT_DIR$/顶部提示条SneakBer" />
           </set>

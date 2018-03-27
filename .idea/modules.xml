@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Dagger2/Dagger2.iml" filepath="$PROJECT_DIR$/Dagger2/Dagger2.iml" />
       <module fileurl="file://$PROJECT_DIR$/DemoApplication.iml" filepath="$PROJECT_DIR$/DemoApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/FragmentTest/FragmentTest.iml" filepath="$PROJECT_DIR$/FragmentTest/FragmentTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSBridge/JSBridge.iml" filepath="$PROJECT_DIR$/JSBridge/JSBridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" filepath="$PROJECT_DIR$/MPAndroidChartDemo/MPAndroidChartDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVP/MVP.iml" filepath="$PROJECT_DIR$/MVP/MVP.iml" />
@@ -36,7 +37,6 @@
       <module fileurl="file://$PROJECT_DIR$/ShareSDKLogin/微信登录.iml" filepath="$PROJECT_DIR$/ShareSDKLogin/微信登录.iml" />
       <module fileurl="file://$PROJECT_DIR$/扫描二维码/扫描二维码.iml" filepath="$PROJECT_DIR$/扫描二维码/扫描二维码.iml" />
       <module fileurl="file://$PROJECT_DIR$/数字键盘/数字键盘.iml" filepath="$PROJECT_DIR$/数字键盘/数字键盘.iml" />
-      <module fileurl="file://$PROJECT_DIR$/日历控件/日历控件.iml" filepath="$PROJECT_DIR$/日历控件/日历控件.iml" />
       <module fileurl="file://$PROJECT_DIR$/滚轮选择/滚轮选择.iml" filepath="$PROJECT_DIR$/滚轮选择/滚轮选择.iml" />
       <module fileurl="file://$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" filepath="$PROJECT_DIR$/顶部提示条SneakBer/顶部提示条SneakBer.iml" />
     </modules>

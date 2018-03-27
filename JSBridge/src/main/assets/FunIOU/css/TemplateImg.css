@@ -1,0 +1,88 @@
+@font-face {
+  font-family: Regular;
+  src: url("../fontface/Regular.ttf");
+}
+body {
+  background: url(../img/bj.png) repeat;
+}
+.maxwidth{
+	width: 10rem;
+	margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  height: 0.6266666666666667rem;
+  margin: 0.13333333333333333rem 0 0.32rem 0;
+}
+.nav .back {
+  float: left;
+  margin: 0 0 0 0.4rem;
+  width: 0.29333333333333333rem;
+  height: 100%;
+  background: url(../img/back.png) no-repeat left center;
+  background-size: 0.29333333333333333rem 0.5333333333333333rem;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.nav .back a{
+	width: 100%;
+	height: 100%;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.Img_title {
+  margin: 0.13333333333333333rem 0 0 0;
+  text-align: center;
+  font-size: 0.96rem;
+  font-family: Regular;
+  color: #151515;
+  line-height: 1.12rem;
+}
+.Img_list{
+  padding: 0.16rem 0 1.5rem 0;
+  height: 15.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.Img_list ul {
+}
+.Img_list li {
+  width: 8.53rem;
+  height: 4.37rem;
+  margin: 0 auto 0.26rem;
+  position: relative;
+}
+.Img_list li img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.Img_list .img_sel:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/gou.png) no-repeat left 0.18rem top 0.24rem;
+  background-size: 0.8533333333333334rem;
+  left: 0;
+  top: 0;
+}
+.create_btn {
+	position: fixed;
+	bottom: 0.37rem;
+	left: 0;
+  margin: 0.6933333333333334rem 0 0 0;
+  width: 100%;
+  padding: 0 0.9333333333333333rem;
+  height: 1.28rem;
+}
+.create_btn div {
+  font-size: 0.48rem;
+  line-height: 1.28rem;
+  text-align: center;
+  color: #fff;
+  background: #111111;
+  border-radius: 0.21333333333333335rem;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.create_btn div a{
+	color: #fff;
+}

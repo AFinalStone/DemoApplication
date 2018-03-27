@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "-apple-system", BlinkMacSystemFont, Roboto, "Helvetica Neue", "MIcrosoft YaHei", sans-serif !important;
+  font-size: 16px;
+  background: #fff;
+  color: #000;
+}
+img {
+  vertical-align: middle;
+  border: 0 none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+ul,li{
+  list-style: none;
+
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
+i,b,strong{
+	font-style: normal;
+  font-weight: normal;
+	
+}
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}

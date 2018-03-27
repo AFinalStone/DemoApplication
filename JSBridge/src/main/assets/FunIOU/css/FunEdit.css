@@ -1,0 +1,97 @@
+@font-face {
+  font-family: Regular;
+  src: url("../fontface/Regular.ttf");
+}
+body {
+  background: url(../img/bj.png) repeat;
+}
+.maxwidth{
+	width: 10rem;
+	margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  height: 0.6266666666666667rem;
+  margin: 0.13333333333333333rem 0 0.32rem 0;
+}
+.nav .back {
+  float: left;
+  margin: 0 0 0 0.4rem;
+  width: 0.29333333333333333rem;
+  height: 100%;
+  background: url(../img/back.png) no-repeat left center;
+  background-size: 0.29333333333333333rem 0.5333333333333333rem;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.nav .back a{
+	width: 100%;
+	height: 100%;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.iouhead {
+  font-family: Regular;
+  padding: 0.38666666666666666rem 0 0.3466666666666667rem 0;
+  font-size: 0.96rem;
+  line-height: 1.12rem;
+  text-align: center;
+}
+.edit label {
+  padding: 0.72rem 0 0 0.13333333333333333rem;
+  font-size: 0.4rem;
+  line-height: 0.56rem;
+  margin: 0 auto;
+  width: 8.133333333333333rem;
+  height: 1.6rem;
+  border-bottom: 2px solid #222222;
+  color: #222222;
+  position: relative;
+  display: block;
+}
+.edit label span{
+	color: rgba(34,34,100,0.6);
+}
+.edit label input {
+  height: 0.56rem;
+  background: rgba(0,0,0,0);
+  border: none;
+  outline: none;
+  font-size: 0.4rem;
+  line-height: 0.56rem;
+  text-indent: 0.13333333333333333rem;
+  width: 6rem;
+}
+.edit label #scheduleReturnDate{
+	float: right;
+}
+.edit label .switch{
+	display: block;
+	float: right;
+	width: 1.36rem;
+	height: 0.8266666666666667rem;
+	background: url(../img/SwitchOff.png) no-repeat left;
+	background-size: 1.36rem 0.8266666666666667rem;
+}
+.edit label .on{
+	background: url(../img/SwitchOn.png) no-repeat left;
+	background-size: 1.36rem 0.8266666666666667rem;
+}
+.generate {
+  display: block;
+  margin: 1.3066666666666666rem auto 0;
+  width: 8.133333333333333rem;
+  height: 1.28rem;
+  background: #111111;
+  border-radius: 16px ;
+  color: #fff;
+  line-height: 1.28rem;
+  text-align: center;
+  font-size: 0.48rem;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.generate a{
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
